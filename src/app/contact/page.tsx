@@ -78,7 +78,9 @@ export default function Contact() {
             <div className="space-y-4">
               <a
                 className="flex items-center gap-4 p-4 bg-white border-[3px] border-zinc-800 hard-shadow-sm hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all"
-                href="#"
+                href="https://discord.gg/BsP7Buc3"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <span className="material-symbols-outlined text-primary text-[32px]" style={{ fontVariationSettings: '"FILL" 1' }}>
                   diversity_3
@@ -88,13 +90,15 @@ export default function Contact() {
                     Discord
                   </span>
                   <span className="font-bold text-lg text-zinc-800">
-                    @ArtStationary#0000
+                    Join Server
                   </span>
                 </div>
               </a>
               <a
                 className="flex items-center gap-4 p-4 bg-white border-[3px] border-zinc-800 hard-shadow-sm hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all"
-                href="#"
+                href="https://www.instagram.com/keep0ntabs?igsh=dGxubWFxMWZjYnN6"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <span className="material-symbols-outlined text-primary text-[32px]" style={{ fontVariationSettings: '"FILL" 1' }}>
                   camera
@@ -104,13 +108,15 @@ export default function Contact() {
                     Instagram
                   </span>
                   <span className="font-bold text-lg text-zinc-800">
-                    @ArtStationary
+                    @keep0ntabs
                   </span>
                 </div>
               </a>
               <a
                 className="flex items-center gap-4 p-4 bg-white border-[3px] border-zinc-800 hard-shadow-sm hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all"
-                href="#"
+                href="https://www.tiktok.com/@keep0ntabs?_r=1&_t=ZS-95yPiJkVOi4"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <span className="material-symbols-outlined text-primary text-[32px]" style={{ fontVariationSettings: '"FILL" 1' }}>
                   video_library
@@ -120,7 +126,7 @@ export default function Contact() {
                     TikTok
                   </span>
                   <span className="font-bold text-lg text-zinc-800">
-                    @ArtStationary_vids
+                    @keep0ntabs
                   </span>
                 </div>
               </a>
@@ -139,14 +145,14 @@ export default function Contact() {
             </h3>
             <div className="bg-primary-fixed p-6 border-[3px] border-zinc-800">
               <p className="font-label-bold text-xs uppercase mb-1">
-                Primary Method: PayPal
+                Method: PayPal • Currency: USD
               </p>
               <p className="font-headline-md text-zinc-900 break-all">
                 thecooltabitha@gmail.com
               </p>
             </div>
             <p className="mt-4 text-sm text-on-surface-variant font-medium italic">
-              * Invoices will be sent after the initial sketch approval.
+              * Payment required after sketch approval. Please include your username + commission type in the note.
             </p>
           </FadeIn>
 

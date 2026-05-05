@@ -39,7 +39,7 @@ export default function Pricing() {
             <ul className="space-y-4">
               <li className="flex justify-between items-center pb-2 border-b border-zinc-100">
                 <span className="font-label-bold text-zinc-700">Headshot</span>
-                <span className="font-headline-md text-primary">$12</span>
+                <span className="font-headline-md text-primary">$6</span>
               </li>
               <li className="flex justify-between items-center pb-2 border-b border-zinc-100">
                 <span className="font-label-bold text-zinc-700">Bust up</span>
@@ -49,9 +49,17 @@ export default function Pricing() {
                 <span className="font-label-bold text-zinc-700">Half body</span>
                 <span className="font-headline-md text-primary">$12</span>
               </li>
-              <li className="flex justify-between items-center">
+              <li className="flex justify-between items-center pb-2 border-b border-zinc-100">
                 <span className="font-label-bold text-zinc-700">Full body</span>
                 <span className="font-headline-md text-primary">$15</span>
+              </li>
+              <li className="flex justify-between items-center pb-2 border-b border-zinc-100">
+                <span className="font-label-bold text-zinc-700">Flat colors</span>
+                <span className="font-headline-md text-primary">+$2</span>
+              </li>
+              <li className="flex justify-between items-center">
+                <span className="font-label-bold text-zinc-700">Simple shading</span>
+                <span className="font-headline-md text-primary">+$2</span>
               </li>
             </ul>
           </div>
@@ -97,9 +105,17 @@ export default function Pricing() {
                 <span className="font-label-bold text-zinc-700">Half body</span>
                 <span className="font-headline-md text-primary">$22</span>
               </li>
-              <li className="flex justify-between items-center">
+              <li className="flex justify-between items-center pb-2 border-b border-zinc-800/10">
                 <span className="font-label-bold text-zinc-700">Full body</span>
                 <span className="font-headline-md text-primary">$26</span>
+              </li>
+              <li className="flex justify-between items-center pb-2 border-b border-zinc-800/10">
+                <span className="font-label-bold text-zinc-700">Flat colors</span>
+                <span className="font-headline-md text-primary">+$2</span>
+              </li>
+              <li className="flex justify-between items-center">
+                <span className="font-label-bold text-zinc-700">Simple shading</span>
+                <span className="font-headline-md text-primary">+$3</span>
               </li>
             </ul>
           </div>
@@ -162,47 +178,64 @@ export default function Pricing() {
             <span className="material-symbols-outlined text-4xl">add_circle</span>
             Add-ons &amp; Extras
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-surface-container-low p-8 border-[3px] border-zinc-800 rounded-xl hard-shadow flex gap-6 items-start">
-              <div className="bg-primary-container p-4 rounded-xl border-2 border-zinc-800 shrink-0">
-                <span className="material-symbols-outlined text-3xl">landscape</span>
-              </div>
-              <div>
-                <h4 className="font-headline-md text-headline-md text-zinc-800 mb-2">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-surface-container-low p-8 border-[3px] border-zinc-800 rounded-xl hard-shadow flex flex-col gap-4 items-start">
+              <div className="flex items-center gap-4">
+                <div className="bg-primary-container p-3 rounded-xl border-2 border-zinc-800 shrink-0">
+                  <span className="material-symbols-outlined text-2xl">landscape</span>
+                </div>
+                <h4 className="font-headline-md text-headline-md text-zinc-800">
                   Backgrounds
                 </h4>
-                <p className="font-body-md text-secondary mb-4">
-                  From simple shapes to fully detailed environments.
-                </p>
-                <div className="flex flex-wrap gap-3">
-                  <span className="px-4 py-1 bg-secondary-fixed-dim border-2 border-zinc-800 rounded-full font-label-bold text-xs">
-                    $2 - Simple
-                  </span>
-                  <span className="px-4 py-1 bg-secondary-fixed-dim border-2 border-zinc-800 rounded-full font-label-bold text-xs">
-                    $8 - Thematic
-                  </span>
-                  <span className="px-4 py-1 bg-secondary-fixed-dim border-2 border-zinc-800 rounded-full font-label-bold text-xs">
-                    $15 - Full Scene
-                  </span>
-                </div>
+              </div>
+              <p className="font-body-md text-secondary">
+                From simple shapes to fully detailed environments.
+              </p>
+              <div className="inline-block px-6 py-2 bg-primary-fixed border-2 border-zinc-800 rounded-lg font-headline-md mt-auto">
+                $2 - $15
               </div>
             </div>
             
-            <div className="bg-surface-container-low p-8 border-[3px] border-zinc-800 rounded-xl hard-shadow flex gap-6 items-start">
-              <div className="bg-primary-container p-4 rounded-xl border-2 border-zinc-800 shrink-0">
-                <span className="material-symbols-outlined text-3xl">group</span>
-              </div>
-              <div>
-                <h4 className="font-headline-md text-headline-md text-zinc-800 mb-2">
+            <div className="bg-surface-container-low p-8 border-[3px] border-zinc-800 rounded-xl hard-shadow flex flex-col gap-4 items-start">
+              <div className="flex items-center gap-4">
+                <div className="bg-primary-container p-3 rounded-xl border-2 border-zinc-800 shrink-0">
+                  <span className="material-symbols-outlined text-2xl">group</span>
+                </div>
+                <h4 className="font-headline-md text-headline-md text-zinc-800">
                   Extra Characters
                 </h4>
-                <p className="font-body-md text-secondary mb-4">
-                  Add more friends or foes to your custom illustration.
-                </p>
-                <div className="inline-block px-6 py-2 bg-primary-fixed border-2 border-zinc-800 rounded-lg font-headline-md">
-                  +60% Base Price
-                </div>
               </div>
+              <p className="font-body-md text-secondary">
+                Add more friends or foes to your custom illustration.
+              </p>
+              <div className="inline-block px-6 py-2 bg-primary-fixed border-2 border-zinc-800 rounded-lg font-headline-md mt-auto">
+                +60% Base Price
+              </div>
+            </div>
+
+            <div className="bg-surface-container-low p-8 border-[3px] border-zinc-800 rounded-xl hard-shadow flex flex-col gap-4 items-start">
+              <div className="flex items-center gap-4">
+                <div className="bg-primary-container p-3 rounded-xl border-2 border-zinc-800 shrink-0">
+                  <span className="material-symbols-outlined text-2xl">auto_awesome</span>
+                </div>
+                <h4 className="font-headline-md text-headline-md text-zinc-800">
+                  Extras
+                </h4>
+              </div>
+              <ul className="space-y-3 w-full font-label-bold text-zinc-700 mt-2">
+                <li className="flex justify-between border-b border-zinc-800/10 pb-2">
+                  <span>Short comic</span>
+                  <span className="text-primary font-headline-md">$5-$15</span>
+                </li>
+                <li className="flex justify-between border-b border-zinc-800/10 pb-2">
+                  <span>Simple doodle</span>
+                  <span className="text-primary font-headline-md">$5-$10</span>
+                </li>
+                <li className="flex justify-between">
+                  <span>Simple matching PFP</span>
+                  <span className="text-primary font-headline-md">$5-$15</span>
+                </li>
+              </ul>
             </div>
           </div>
         </section>
@@ -217,25 +250,25 @@ export default function Pricing() {
             <div>
               <div className="font-label-bold text-primary mb-2">TAT</div>
               <p className="text-zinc-600 font-body-md">
-                2-4 weeks depending on complexity.
-              </p>
-            </div>
-            <div>
-              <div className="font-label-bold text-primary mb-2">REVISIONS</div>
-              <p className="text-zinc-600 font-body-md">
-                2 free major revisions at sketch phase.
+                2-21 days depending on complexity.
               </p>
             </div>
             <div>
               <div className="font-label-bold text-primary mb-2">PAYMENT</div>
               <p className="text-zinc-600 font-body-md">
-                Full payment upfront via PayPal or Ko-fi.
+                Payment required after sketch approval. USD via PayPal.
               </p>
             </div>
             <div>
-              <div className="font-label-bold text-primary mb-2">USAGE</div>
+              <div className="font-label-bold text-primary mb-2">REFUNDS</div>
               <p className="text-zinc-600 font-body-md">
-                Personal use only. Commercial x2 price.
+                No refunds unless I am unable to finish the commission.
+              </p>
+            </div>
+            <div>
+              <div className="font-label-bold text-primary mb-2">RULES</div>
+              <p className="text-zinc-600 font-body-md">
+                No claiming/reselling, credit required, no AI/NFT.
               </p>
             </div>
           </div>

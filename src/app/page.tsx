@@ -49,15 +49,15 @@ export default function Home() {
       </FadeIn>
 
       <FadeIn delay={0.2}>
-        <section className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-24">
+        <section className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-24">
           <div className="bg-white border-4 border-zinc-800 p-8 rounded-3xl shadow-[8px_8px_0px_0px_rgba(43,47,52,1)]">
             <div className="flex items-center gap-4 mb-8">
-              <div className="w-12 h-12 bg-green-200 border-4 border-zinc-800 rounded-full flex items-center justify-center">
+              <div className="w-12 h-12 bg-green-200 border-4 border-zinc-800 rounded-full flex items-center justify-center shrink-0">
                 <span className="material-symbols-outlined text-zinc-800 font-bold">check</span>
               </div>
               <h2 className="font-headline-lg text-zinc-800">I Can Do</h2>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="flex flex-col gap-3">
               <div className="flex items-center gap-3 p-3 bg-secondary-fixed rounded-xl border-2 border-zinc-800">
                 <span className="material-symbols-outlined text-primary">person</span>
                 <span className="font-label-bold uppercase">OCs</span>
@@ -72,7 +72,7 @@ export default function Home() {
               </div>
               <div className="flex items-center gap-3 p-3 bg-secondary-fixed rounded-xl border-2 border-zinc-800">
                 <span className="material-symbols-outlined text-primary">pets</span>
-                <span className="font-label-bold uppercase">Non-human</span>
+                <span className="font-label-bold uppercase">Non-human / Humanoids</span>
               </div>
               <div className="flex items-center gap-3 p-3 bg-secondary-fixed rounded-xl border-2 border-zinc-800">
                 <span className="material-symbols-outlined text-primary">auto_awesome</span>
@@ -80,27 +80,62 @@ export default function Home() {
               </div>
               <div className="flex items-center gap-3 p-3 bg-secondary-fixed rounded-xl border-2 border-zinc-800">
                 <span className="material-symbols-outlined text-primary">groups</span>
-                <span className="font-label-bold uppercase">Couples/Ships</span>
+                <span className="font-label-bold uppercase">Couples / Ships</span>
               </div>
               <div className="flex items-center gap-3 p-3 bg-secondary-fixed rounded-xl border-2 border-zinc-800">
                 <span className="material-symbols-outlined text-primary">water_drop</span>
-                <span className="font-label-bold uppercase">Light gore</span>
+                <span className="font-label-bold uppercase">Light to mild gore</span>
               </div>
               <div className="flex items-center gap-3 p-3 bg-secondary-fixed rounded-xl border-2 border-zinc-800">
                 <span className="material-symbols-outlined text-primary">celebration</span>
                 <span className="font-label-bold uppercase">Suggestive</span>
+              </div>
+              <div className="flex items-center gap-3 p-3 bg-secondary-fixed rounded-xl border-2 border-zinc-800">
+                <span className="material-symbols-outlined text-primary">accessibility_new</span>
+                <span className="font-label-bold uppercase">Any Poses</span>
               </div>
             </div>
           </div>
 
           <div className="bg-white border-4 border-zinc-800 p-8 rounded-3xl shadow-[8px_8px_0px_0px_rgba(43,47,52,1)]">
             <div className="flex items-center gap-4 mb-8">
-              <div className="w-12 h-12 bg-red-200 border-4 border-zinc-800 rounded-full flex items-center justify-center">
+              <div className="w-12 h-12 bg-yellow-200 border-4 border-zinc-800 rounded-full flex items-center justify-center shrink-0">
+                <span className="material-symbols-outlined text-zinc-800 font-bold">help</span>
+              </div>
+              <h2 className="font-headline-lg text-zinc-800">I&apos;ll Consider</h2>
+            </div>
+            <div className="flex flex-col gap-3">
+              <div className="flex items-center gap-3 p-3 bg-secondary-container rounded-xl border-2 border-zinc-800">
+                <span className="material-symbols-outlined text-primary">smart_toy</span>
+                <span className="font-label-bold uppercase">Mecha</span>
+              </div>
+              <div className="flex items-center gap-3 p-3 bg-secondary-container rounded-xl border-2 border-zinc-800">
+                <span className="material-symbols-outlined text-primary">design_services</span>
+                <span className="font-label-bold uppercase">Heavy Character Design</span>
+              </div>
+              <div className="flex items-center gap-3 p-3 bg-secondary-container rounded-xl border-2 border-zinc-800">
+                <span className="material-symbols-outlined text-primary">security</span>
+                <span className="font-label-bold uppercase">Armors</span>
+              </div>
+              <div className="flex items-center gap-3 p-3 bg-secondary-container rounded-xl border-2 border-zinc-800">
+                <span className="material-symbols-outlined text-primary">landscape</span>
+                <span className="font-label-bold uppercase">Sceneries</span>
+              </div>
+              <div className="flex items-center gap-3 p-3 bg-secondary-container rounded-xl border-2 border-zinc-800">
+                <span className="material-symbols-outlined text-primary">cruelty_free</span>
+                <span className="font-label-bold uppercase">Furries</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-white border-4 border-zinc-800 p-8 rounded-3xl shadow-[8px_8px_0px_0px_rgba(43,47,52,1)]">
+            <div className="flex items-center gap-4 mb-8">
+              <div className="w-12 h-12 bg-red-200 border-4 border-zinc-800 rounded-full flex items-center justify-center shrink-0">
                 <span className="material-symbols-outlined text-zinc-800 font-bold">close</span>
               </div>
-              <h2 className="font-headline-lg text-zinc-800">Nope/Don&apos;t Do</h2>
+              <h2 className="font-headline-lg text-zinc-800">Nope</h2>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="flex flex-col gap-3">
               <div className="flex items-center gap-3 p-3 bg-error-container rounded-xl border-2 border-zinc-800 opacity-80">
                 <span className="material-symbols-outlined text-error">block</span>
                 <span className="font-label-bold uppercase">NSFW</span>
@@ -111,7 +146,7 @@ export default function Home() {
               </div>
               <div className="flex items-center gap-3 p-3 bg-error-container rounded-xl border-2 border-zinc-800 opacity-80">
                 <span className="material-symbols-outlined text-error">report</span>
-                <span className="font-label-bold uppercase">Problematic</span>
+                <span className="font-label-bold uppercase">Problematic content</span>
               </div>
               <div className="flex items-center gap-3 p-3 bg-error-container rounded-xl border-2 border-zinc-800 opacity-80">
                 <span className="material-symbols-outlined text-error">mood_bad</span>
@@ -123,15 +158,11 @@ export default function Home() {
               </div>
               <div className="flex items-center gap-3 p-3 bg-error-container rounded-xl border-2 border-zinc-800 opacity-80">
                 <span className="material-symbols-outlined text-error">warning</span>
-                <span className="font-label-bold uppercase">Racist/Ableist</span>
+                <span className="font-label-bold uppercase text-xs">Racist / Ableist</span>
               </div>
               <div className="flex items-center gap-3 p-3 bg-error-container rounded-xl border-2 border-zinc-800 opacity-80">
                 <span className="material-symbols-outlined text-error">cancel</span>
-                <span className="font-label-bold uppercase">Hoyoverse</span>
-              </div>
-              <div className="flex items-center gap-3 p-3 bg-error-container rounded-xl border-2 border-zinc-800 opacity-80">
-                <span className="material-symbols-outlined text-error">dangerous</span>
-                <span className="font-label-bold uppercase">Offensive</span>
+                <span className="font-label-bold uppercase text-xs">Hoyoverse (too complex!)</span>
               </div>
             </div>
           </div>

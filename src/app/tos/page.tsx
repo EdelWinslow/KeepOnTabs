@@ -67,8 +67,7 @@ export default function TOS() {
                 <div>
                   <h3 className="font-label-bold text-zinc-800">4. No Refunds</h3>
                   <p className="text-sm text-zinc-600 mt-1 italic">
-                    Once the final coloring phase begins, no refunds will be
-                    issued.
+                    No refunds will be issued unless I am unable to finish the commission.
                   </p>
                 </div>
               </div>
@@ -93,7 +92,7 @@ export default function TOS() {
                     6. Credit Required
                   </h3>
                   <p className="text-sm text-zinc-600 mt-1 italic">
-                    Please credit &apos;ArtStationary&apos; when posting the artwork
+                    Please credit &apos;keep0ntabs&apos; when posting the artwork
                     online.
                   </p>
                 </div>
@@ -104,8 +103,7 @@ export default function TOS() {
                 <div>
                   <h3 className="font-label-bold text-zinc-800">7. No Reselling</h3>
                   <p className="text-sm text-zinc-600 mt-1 italic">
-                    Artwork is for personal use only. Commercial reselling is
-                    strictly prohibited without prior written agreement.
+                    No claiming or reselling the artwork. Artwork is for personal use only.
                   </p>
                 </div>
               </div>
@@ -142,7 +140,7 @@ export default function TOS() {
             </div>
             <div className="mt-6 flex items-center gap-2 text-on-primary-container font-label-bold italic">
               <span className="material-symbols-outlined">info</span>
-              Please include your order # in the notes!
+              Please include your username + commission type in the notes!
             </div>
           </FadeIn>
 
@@ -153,7 +151,9 @@ export default function TOS() {
             <div className="flex flex-col gap-4">
               <a
                 className="flex items-center justify-between p-4 border-2 border-zinc-800 rounded-lg hover:bg-tertiary-fixed transition-colors"
-                href="#"
+                href="https://discord.gg/BsP7Buc3"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <div className="flex items-center gap-3">
                   <span className="material-symbols-outlined text-indigo-500" style={{ fontVariationSettings: '"FILL" 1' }}>
@@ -161,11 +161,13 @@ export default function TOS() {
                   </span>
                   <span className="font-label-bold">Discord</span>
                 </div>
-                <span className="text-zinc-500">@ArtStationary#0000</span>
+                <span className="text-zinc-500">Join Server</span>
               </a>
               <a
                 className="flex items-center justify-between p-4 border-2 border-zinc-800 rounded-lg hover:bg-tertiary-fixed transition-colors"
-                href="#"
+                href="https://www.instagram.com/keep0ntabs?igsh=dGxubWFxMWZjYnN6"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <div className="flex items-center gap-3">
                   <span className="material-symbols-outlined text-pink-500" style={{ fontVariationSettings: '"FILL" 1' }}>
@@ -173,11 +175,13 @@ export default function TOS() {
                   </span>
                   <span className="font-label-bold">Instagram</span>
                 </div>
-                <span className="text-zinc-500">@ArtStationary</span>
+                <span className="text-zinc-500">@keep0ntabs</span>
               </a>
               <a
                 className="flex items-center justify-between p-4 border-2 border-zinc-800 rounded-lg hover:bg-tertiary-fixed transition-colors"
-                href="#"
+                href="https://www.tiktok.com/@keep0ntabs?_r=1&_t=ZS-95yPiJkVOi4"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <div className="flex items-center gap-3">
                   <span className="material-symbols-outlined text-black" style={{ fontVariationSettings: '"FILL" 1' }}>
@@ -185,7 +189,7 @@ export default function TOS() {
                   </span>
                   <span className="font-label-bold">TikTok</span>
                 </div>
-                <span className="text-zinc-500">@ArtStationary_vids</span>
+                <span className="text-zinc-500">@keep0ntabs</span>
               </a>
             </div>
           </FadeIn>
