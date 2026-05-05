@@ -71,7 +71,7 @@ export default function Contact() {
         </FadeIn>
 
         <div className="lg:col-span-5 flex flex-col gap-gutter">
-          <FadeIn delay={0.2} className="bg-secondary-container border-[3px] border-zinc-800 hard-shadow-lg p-8">
+          <FadeIn delay={0.2} className="bg-secondary-container border-[3px] border-zinc-800 hard-shadow-lg p-8 shrink-0">
             <h3 className="font-headline-md text-headline-md mb-6">
               Find Me Elsewhere
             </h3>
@@ -127,7 +127,7 @@ export default function Contact() {
             </div>
           </FadeIn>
 
-          <FadeIn delay={0.3} className="bg-white border-[3px] border-zinc-800 hard-shadow-lg p-8 relative overflow-hidden">
+          <FadeIn delay={0.3} className="bg-white border-[3px] border-zinc-800 hard-shadow-lg p-8 relative overflow-hidden shrink-0">
             <div className="absolute -right-4 -top-4 opacity-10">
               <span className="material-symbols-outlined text-[120px] rotate-12">
                 payments
