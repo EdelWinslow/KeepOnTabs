@@ -144,55 +144,7 @@ export default function TOS() {
             </div>
           </FadeIn>
 
-          <FadeIn delay={0.3} className="bg-white border-4 border-zinc-800 p-8 rounded-xl brutal-shadow">
-            <h2 className="font-headline-md text-headline-md mb-6">
-              Find Me Elsewhere
-            </h2>
-            <div className="flex flex-col gap-4">
-              <a
-                className="flex items-center justify-between p-4 border-2 border-zinc-800 rounded-lg hover:bg-tertiary-fixed transition-colors"
-                href="https://discord.gg/BsP7Buc3"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <div className="flex items-center gap-3">
-                  <span className="material-symbols-outlined text-indigo-500" style={{ fontVariationSettings: '"FILL" 1' }}>
-                    chat_bubble
-                  </span>
-                  <span className="font-label-bold">Discord</span>
-                </div>
-                <span className="text-zinc-500">Join Server</span>
-              </a>
-              <a
-                className="flex items-center justify-between p-4 border-2 border-zinc-800 rounded-lg hover:bg-tertiary-fixed transition-colors"
-                href="https://www.instagram.com/keep0ntabs?igsh=dGxubWFxMWZjYnN6"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <div className="flex items-center gap-3">
-                  <span className="material-symbols-outlined text-pink-500" style={{ fontVariationSettings: '"FILL" 1' }}>
-                    photo_camera
-                  </span>
-                  <span className="font-label-bold">Instagram</span>
-                </div>
-                <span className="text-zinc-500">@keep0ntabs</span>
-              </a>
-              <a
-                className="flex items-center justify-between p-4 border-2 border-zinc-800 rounded-lg hover:bg-tertiary-fixed transition-colors"
-                href="https://www.tiktok.com/@keep0ntabs?_r=1&_t=ZS-95yPiJkVOi4"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <div className="flex items-center gap-3">
-                  <span className="material-symbols-outlined text-black" style={{ fontVariationSettings: '"FILL" 1' }}>
-                    videocam
-                  </span>
-                  <span className="font-label-bold">TikTok</span>
-                </div>
-                <span className="text-zinc-500">@keep0ntabs</span>
-              </a>
-            </div>
-          </FadeIn>
+
 
           <FadeIn delay={0.4} className="border-4 border-zinc-800 rounded-xl overflow-hidden brutal-shadow bg-zinc-200 aspect-square relative flex">
             <div className="w-full h-full flex-grow flex items-center justify-center bg-[#E5E7EB]">
