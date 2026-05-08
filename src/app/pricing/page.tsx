@@ -1,6 +1,13 @@
+"use client";
+
 import FadeIn from "@/components/FadeIn";
+import CommissionCalculator from "@/components/CommissionCalculator";
 
 export default function Pricing() {
+  const handleSelectStyle = (style: string) => {
+    window.dispatchEvent(new CustomEvent("setStyle", { detail: style }));
+    document.getElementById("calculator")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
   return (
     <div className="max-w-container-max mx-auto px-8 py-16 w-full flex-grow">
       <FadeIn>
@@ -64,7 +71,10 @@ export default function Pricing() {
             </ul>
           </div>
           <div className="p-8 pt-0">
-            <button className="w-full py-4 bg-white border-[3px] border-zinc-800 rounded-lg font-label-bold hard-shadow hard-shadow-hover hard-shadow-active transition-all cursor-pointer">
+            <button 
+              onClick={() => handleSelectStyle("sketch")}
+              className="w-full py-4 bg-white border-[3px] border-zinc-800 rounded-lg font-label-bold hard-shadow hard-shadow-hover hard-shadow-active transition-all cursor-pointer"
+            >
               Select Sketch
             </button>
           </div>
@@ -120,7 +130,10 @@ export default function Pricing() {
             </ul>
           </div>
           <div className="p-8 pt-0">
-            <button className="w-full py-4 bg-primary-container border-[3px] border-zinc-800 rounded-lg font-label-bold hard-shadow hard-shadow-hover hard-shadow-active transition-all cursor-pointer">
+            <button 
+              onClick={() => handleSelectStyle("lineart")}
+              className="w-full py-4 bg-primary-container border-[3px] border-zinc-800 rounded-lg font-label-bold hard-shadow hard-shadow-hover hard-shadow-active transition-all cursor-pointer"
+            >
               Select Lineart
             </button>
           </div>
@@ -165,7 +178,10 @@ export default function Pricing() {
             </ul>
           </div>
           <div className="p-8 pt-0">
-            <button className="w-full py-4 bg-white border-[3px] border-zinc-800 rounded-lg font-label-bold hard-shadow hard-shadow-hover hard-shadow-active transition-all cursor-pointer">
+            <button 
+              onClick={() => handleSelectStyle("render")}
+              className="w-full py-4 bg-white border-[3px] border-zinc-800 rounded-lg font-label-bold hard-shadow hard-shadow-hover hard-shadow-active transition-all cursor-pointer"
+            >
               Select Render
             </button>
           </div>
@@ -240,8 +256,13 @@ export default function Pricing() {
           </div>
         </section>
       </FadeIn>
-
       <FadeIn delay={0.5}>
+        <div id="calculator" className="scroll-mt-8">
+          <CommissionCalculator />
+        </div>
+      </FadeIn>
+
+      <FadeIn delay={0.6}>
         <section className="mt-20 p-10 bg-white border-[3px] border-zinc-800 rounded-xl hard-shadow">
           <h3 className="font-headline-md text-headline-md text-zinc-800 mb-6">
             Commission Terms

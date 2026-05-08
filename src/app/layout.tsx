@@ -41,7 +41,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${plusJakartaSans.variable} ${beVietnamPro.variable} ${lexend.variable} antialiased bg-background text-on-background font-body-md min-h-screen flex flex-col overflow-x-hidden`}
+        className={`${plusJakartaSans.variable} ${beVietnamPro.variable} ${lexend.variable} antialiased bg-[#D7ECFF] text-on-background font-body-md min-h-screen flex flex-col overflow-x-hidden`}
       >
         <Navbar />
         {children}

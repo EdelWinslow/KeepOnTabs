@@ -1,7 +1,94 @@
+"use client";
+
 import FadeIn from "@/components/FadeIn";
 import Link from "next/link";
+import { useState } from "react";
+
+const CATEGORIES = ["All Works", "Characters", "Illustrations", "Sketches"];
+
+const WORKS = [
+  {
+    id: 1,
+    title: "Neon Dreams Metropolis",
+    category: "Illustrations",
+    imageText: "Neon Dreams Metropolis Illustration",
+    span: "md:col-span-8",
+    height: "h-[400px]",
+    delay: 0.2,
+  },
+  {
+    id: 2,
+    title: "Botany Bot v2.0",
+    category: "Characters",
+    imageText: "Botany Bot v2.0",
+    span: "md:col-span-4",
+    height: "h-[400px]",
+    delay: 0.3,
+  },
+  {
+    id: 3,
+    title: "Creative Chaos",
+    category: "Sketches",
+    imageText: "Creative Chaos",
+    span: "md:col-span-4",
+    height: "h-[250px]",
+    delay: 0.4,
+  },
+  {
+    id: 4,
+    title: "Expression Sheet",
+    category: "Characters",
+    imageText: "Character Expression Sheet",
+    span: "md:col-span-4",
+    height: "h-[250px]",
+    delay: 0.5,
+  },
+  {
+    id: 5,
+    title: "Azure Horizon",
+    category: "Illustrations",
+    imageText: "Azure Horizon Landscape",
+    span: "md:col-span-4",
+    height: "h-[250px]",
+    delay: 0.6,
+  },
+  {
+    id: 6,
+    title: "Sci-Fi Mercenary",
+    category: "Characters",
+    imageText: "Sci-Fi Mercenary Concept",
+    span: "md:col-span-4",
+    height: "h-[250px]",
+    delay: 0.7,
+  },
+  {
+    id: 7,
+    title: "Café Doodle",
+    category: "Sketches",
+    imageText: "Quick Café Sketch",
+    span: "md:col-span-4",
+    height: "h-[250px]",
+    delay: 0.8,
+  },
+  {
+    id: 8,
+    title: "Starlight Battle",
+    category: "Illustrations",
+    imageText: "Epic Space Battle",
+    span: "md:col-span-4",
+    height: "h-[250px]",
+    delay: 0.9,
+  },
+];
 
 export default function Gallery() {
+  const [activeCategory, setActiveCategory] = useState("All Works");
+
+  const filteredWorks =
+    activeCategory === "All Works"
+      ? WORKS
+      : WORKS.filter((work) => work.category === activeCategory);
+
   return (
     <div className="max-w-container-max mx-auto px-8 py-16 w-full flex-grow">
       <FadeIn>
@@ -18,83 +105,58 @@ export default function Gallery() {
 
       <FadeIn delay={0.1}>
         <div className="flex flex-wrap gap-4 mb-12">
-          <button className="bg-primary-container text-on-primary-container font-label-bold text-label-bold px-6 py-3 rounded-full border-2 border-zinc-800 hard-shadow active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all cursor-pointer">
-            All Works
-          </button>
-          <button className="bg-secondary-container text-on-secondary-container font-label-bold text-label-bold px-6 py-3 rounded-full border-2 border-zinc-800 hard-shadow-hover active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all cursor-pointer">
-            Characters
-          </button>
-          <button className="bg-secondary-container text-on-secondary-container font-label-bold text-label-bold px-6 py-3 rounded-full border-2 border-zinc-800 hard-shadow-hover active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all cursor-pointer">
-            Illustrations
-          </button>
-          <button className="bg-secondary-container text-on-secondary-container font-label-bold text-label-bold px-6 py-3 rounded-full border-2 border-zinc-800 hard-shadow-hover active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all cursor-pointer">
-            Sketches
-          </button>
+          {CATEGORIES.map((category) => (
+            <button
+              key={category}
+              onClick={() => setActiveCategory(category)}
+              className={`${
+                activeCategory === category
+                  ? "bg-primary-container text-on-primary-container"
+                  : "bg-secondary-container text-on-secondary-container"
+              } font-label-bold text-label-bold px-6 py-3 rounded-full border-2 border-zinc-800 ${
+                activeCategory === category ? "hard-shadow" : "hard-shadow-hover"
+              } active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all cursor-pointer`}
+            >
+              {category}
+            </button>
+          ))}
         </div>
       </FadeIn>
 
       <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter">
-        <FadeIn delay={0.2} className="md:col-span-8 bg-white border-[3px] border-zinc-800 p-4 hard-shadow group">
-          <div className="overflow-hidden border-2 border-zinc-800 mb-4 h-[400px]">
-            <div className="w-full h-full bg-[#E5E7EB] flex items-center justify-center text-zinc-600 font-bold uppercase tracking-widest text-center px-4 transition-transform duration-500 group-hover:scale-105">
-              Neon Dreams Metropolis Illustration
+        {filteredWorks.map((work) => (
+          <FadeIn
+            key={work.id}
+            delay={work.delay}
+            className={`${work.span} bg-white border-[3px] border-zinc-800 p-4 hard-shadow group flex flex-col`}
+          >
+            <div
+              className={`overflow-hidden border-2 border-zinc-800 mb-4 ${work.height}`}
+            >
+              <div className="w-full h-full bg-[#E5E7EB] flex items-center justify-center text-zinc-600 font-bold uppercase tracking-widest text-center px-4 transition-transform duration-500 group-hover:scale-105">
+                {work.imageText}
+              </div>
             </div>
-          </div>
-          <div className="flex justify-between items-end">
-            <div>
-              <span className="bg-secondary-container text-on-secondary-container px-3 py-1 border border-zinc-800 text-xs font-bold uppercase mb-2 inline-block">
-                Illustration
+            <div className="flex justify-between items-end mt-auto">
+              <div>
+                <span className="bg-secondary-container text-on-secondary-container px-3 py-1 border border-zinc-800 text-xs font-bold uppercase mb-2 inline-block">
+                  {work.category}
+                </span>
+                <h3 className="font-headline-md text-headline-md">
+                  {work.title}
+                </h3>
+              </div>
+              <span className="material-symbols-outlined text-zinc-800 text-3xl">
+                arrow_outward
               </span>
-              <h3 className="font-headline-md text-headline-md">
-                Neon Dreams Metropolis
-              </h3>
             </div>
-            <span className="material-symbols-outlined text-zinc-800 text-3xl">
-              arrow_outward
-            </span>
-          </div>
-        </FadeIn>
+          </FadeIn>
+        ))}
 
-        <FadeIn delay={0.3} className="md:col-span-4 bg-white border-[3px] border-zinc-800 p-4 hard-shadow group">
-          <div className="overflow-hidden border-2 border-zinc-800 mb-4 h-[400px]">
-            <div className="w-full h-full bg-[#E5E7EB] flex items-center justify-center text-zinc-600 font-bold uppercase tracking-widest text-center px-4 transition-transform duration-500 group-hover:scale-105">
-              Botany Bot v2.0
-            </div>
-          </div>
-          <span className="bg-secondary-container text-on-secondary-container px-3 py-1 border border-zinc-800 text-xs font-bold uppercase mb-2 inline-block">
-            Characters
-          </span>
-          <h3 className="font-headline-md text-headline-md">Botany Bot v2.0</h3>
-        </FadeIn>
-
-        <FadeIn delay={0.4} className="md:col-span-4 bg-white border-[3px] border-zinc-800 p-4 hard-shadow group">
-          <div className="overflow-hidden border-2 border-zinc-800 mb-4 h-[250px]">
-            <div className="w-full h-full bg-[#E5E7EB] flex items-center justify-center text-zinc-600 font-bold uppercase tracking-widest text-center px-4 transition-transform duration-500 group-hover:scale-105">
-              Creative Chaos
-            </div>
-          </div>
-          <h3 className="font-headline-md text-headline-md">Creative Chaos</h3>
-        </FadeIn>
-
-        <FadeIn delay={0.5} className="md:col-span-4 bg-white border-[3px] border-zinc-800 p-4 hard-shadow group">
-          <div className="overflow-hidden border-2 border-zinc-800 mb-4 h-[250px]">
-            <div className="w-full h-full bg-[#E5E7EB] flex items-center justify-center text-zinc-600 font-bold uppercase tracking-widest text-center px-4 transition-transform duration-500 group-hover:scale-105">
-              Character Expression Sheet
-            </div>
-          </div>
-          <h3 className="font-headline-md text-headline-md">Expression Sheet</h3>
-        </FadeIn>
-
-        <FadeIn delay={0.6} className="md:col-span-4 bg-white border-[3px] border-zinc-800 p-4 hard-shadow group">
-          <div className="overflow-hidden border-2 border-zinc-800 mb-4 h-[250px]">
-            <div className="w-full h-full bg-[#E5E7EB] flex items-center justify-center text-zinc-600 font-bold uppercase tracking-widest text-center px-4 transition-transform duration-500 group-hover:scale-105">
-              Azure Horizon Landscape
-            </div>
-          </div>
-          <h3 className="font-headline-md text-headline-md">Azure Horizon</h3>
-        </FadeIn>
-
-        <FadeIn delay={0.7} className="md:col-span-12 bg-primary-container border-[4px] border-zinc-800 p-12 hard-shadow flex flex-col md:flex-row items-center justify-between gap-8 mt-8">
+        <FadeIn
+          delay={0.5}
+          className="md:col-span-12 bg-primary-container border-[4px] border-zinc-800 p-12 hard-shadow flex flex-col md:flex-row items-center justify-between gap-8 mt-8"
+        >
           <div className="max-w-xl">
             <h2 className="font-headline-xl text-headline-xl text-on-primary-container mb-4">
               Want something custom?

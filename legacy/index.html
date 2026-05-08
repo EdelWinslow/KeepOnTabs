@@ -1,0 +1,1571 @@
+<!doctype html>
+<html class="light" lang="en">
+  <head>
+
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&amp;family=Lexend:wght@400;600&amp;family=Be+Vietnam+Pro:wght@400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-error-container": "#93000a",
+              "surface-bright": "#f9f9f9",
+              "on-surface-variant": "#424750",
+              "inverse-surface": "#2f3131",
+              "on-primary-fixed": "#001c3a",
+              "inverse-on-surface": "#f0f1f1",
+              "error-container": "#ffdad6",
+              "on-tertiary-fixed-variant": "#43474c",
+              "surface-variant": "#e2e2e2",
+              "surface-tint": "#2760a0",
+              "on-secondary-fixed-variant": "#3c494d",
+              primary: "#2760a0",
+              "on-secondary-fixed": "#111d21",
+              "on-primary-fixed-variant": "#004784",
+              "tertiary-container": "#b4b7bd",
+              "on-error": "#ffffff",
+              "surface-container-highest": "#e2e2e2",
+              "secondary-fixed": "#d7e5ea",
+              "on-primary-container": "#004886",
+              "outline-variant": "#c2c6d2",
+              "on-secondary": "#ffffff",
+              "secondary-container": "#d4e2e7",
+              secondary: "#536165",
+              "inverse-primary": "#a4c8ff",
+              "surface-dim": "#dadada",
+              "surface-container-lowest": "#ffffff",
+              "on-primary": "#ffffff",
+              "tertiary-fixed": "#e0e2e9",
+              "primary-fixed": "#d4e3ff",
+              surface: "#f9f9f9",
+              "tertiary-fixed-dim": "#c3c7cd",
+              "on-tertiary-container": "#44484d",
+              "on-surface": "#1a1c1c",
+              "primary-fixed-dim": "#a4c8ff",
+              "on-tertiary-fixed": "#181c21",
+              background: "#f9f9f9",
+              "surface-container-high": "#e8e8e8",
+              "on-background": "#1a1c1c",
+              "surface-container": "#eeeeee",
+              "secondary-fixed-dim": "#bbc9ce",
+              tertiary: "#5b5f64",
+              "primary-container": "#87b9ff",
+              error: "#ba1a1a",
+              outline: "#727781",
+              "on-tertiary": "#ffffff",
+              "on-secondary-container": "#576569",
+              "surface-container-low": "#f3f3f4",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              unit: "8px",
+              margin: "40px",
+              gutter: "24px",
+              "container-max": "1280px",
+            },
+            fontFamily: {
+              "headline-xl": ["Plus Jakarta Sans"],
+              "label-bold": ["Lexend"],
+              "body-lg": ["Be Vietnam Pro"],
+              "headline-lg": ["Plus Jakarta Sans"],
+              "body-md": ["Be Vietnam Pro"],
+              "headline-md": ["Plus Jakarta Sans"],
+            },
+            fontSize: {
+              "headline-xl": [
+                "48px",
+                {
+                  lineHeight: "56px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "800",
+                },
+              ],
+              "label-bold": ["14px", { lineHeight: "20px", fontWeight: "600" }],
+              "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+              "headline-lg": [
+                "32px",
+                { lineHeight: "40px", fontWeight: "800" },
+              ],
+              "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+              "headline-md": [
+                "24px",
+                { lineHeight: "32px", fontWeight: "700" },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      .hard-shadow-sm {
+        box-shadow: 2px 2px 0px 0px #2b2f34;
+      }
+      .hard-shadow-md {
+        box-shadow: 4px 4px 0px 0px #2b2f34;
+      }
+      .hard-shadow-lg {
+        box-shadow: 8px 8px 0px 0px #2b2f34;
+      }
+      .active-press:active {
+        transform: translate(4px, 4px);
+        box-shadow: none;
+      }
+    
+      .hard-shadow {
+        box-shadow: 4px 4px 0px 0px #2b2f34;
+      }
+      .hard-shadow-hover:hover {
+        transform: translate(2px, 2px);
+        box-shadow: 2px 2px 0px 0px #2b2f34;
+      }
+      .hard-shadow-active:active {
+        transform: translate(4px, 4px);
+        box-shadow: 0px 0px 0px 0px #2b2f34;
+      }
+      .brutal-shadow {
+        box-shadow: 4px 4px 0px 0px #2b2f34;
+      }
+      .brutal-shadow-hover:hover {
+        transform: translate(2px, 2px);
+        box-shadow: 2px 2px 0px 0px #2b2f34;
+      }
+      .brutal-shadow-active:active {
+        transform: translate(4px, 4px);
+        box-shadow: 0px 0px 0px 0px #2b2f34;
+      }
+</style>
+  
+  </head>
+  <body class="bg-background text-on-background font-body-md overflow-x-hidden min-h-screen flex flex-col">
+    <header
+      class="w-full border-b-4 border-zinc-800 dark:border-zinc-950 sticky top-0 z-50 bg-white dark:bg-zinc-900 shadow-[4px_4px_0px_0px_rgba(43,47,52,1)]"
+    >
+      <div
+        class="flex justify-between items-center h-20 px-8 w-full max-w-full mx-auto"
+      >
+        <a href="#home"
+          class="text-2xl font-black text-zinc-800 dark:text-zinc-100 italic font-['Plus_Jakarta_Sans']"
+        >
+          ArtStationary
+        </a>
+        <nav
+          class="hidden md:flex items-center gap-8 font-['Plus_Jakarta_Sans'] font-bold uppercase tracking-tight"
+        >
+          <a
+            class="text-zinc-500 dark:text-zinc-400 hover:text-zinc-800 dark:hover:text-zinc-200 hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
+            href="#gallery"
+            >Portfolio</a
+          >
+          <a
+            class="text-zinc-500 dark:text-zinc-400 hover:text-zinc-800 dark:hover:text-zinc-200 hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
+            href="#pricing"
+            >Pricing</a
+          >
+          <a
+            class="text-zinc-500 dark:text-zinc-400 hover:text-zinc-800 dark:hover:text-zinc-200 hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
+            href="#tos"
+            >TOS</a
+          >
+          <a
+            class="text-zinc-900 dark:text-white border-b-4 border-blue-400 pb-1"
+            href="#contact"
+            >Contact</a
+          >
+        </nav>
+        <button
+          class="bg-primary-container text-zinc-900 px-6 py-2 border-4 border-zinc-800 hard-shadow-md font-bold uppercase tracking-tighter active-press transition-all"
+        >
+          Hire Me
+        </button>
+      </div>
+    </header>
+    <main class="max-w-[1280px] mx-auto px-8 py-16 flex-grow w-full">
+
+      <section id="home" class="page-section ">
+
+      <!-- Hero Section -->
+      <section class="flex flex-col md:flex-row items-center gap-12 mb-24">
+        <div class="flex-1 space-y-8">
+          <div
+            class="inline-block bg-primary-container border-4 border-zinc-800 px-6 py-2 rotate-[-2deg] shadow-[4px_4px_0px_0px_rgba(43,47,52,1)]"
+          >
+            <span
+              class="font-headline-md text-zinc-800 uppercase tracking-widest"
+              >Commissions Open!</span
+            >
+          </div>
+          <h1 class="font-headline-xl text-on-background">
+            Your imagination, <br /><span
+              class="text-primary-container drop-shadow-[2px_2px_0px_#2B2F34]"
+              >hand-inked</span
+            >
+            with joy.
+          </h1>
+          <p class="text-body-lg text-secondary max-w-lg">
+            Bringing your characters and ideas to life with a professional touch
+            and a best-friend vibe. Let's create something amazing together.
+          </p>
+          <div class="flex flex-wrap gap-4 pt-4">
+            <button
+              class="bg-primary-container text-zinc-800 border-4 border-zinc-800 px-8 py-4 font-headline-md rounded-xl shadow-[6px_6px_0px_0px_rgba(43,47,52,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none active:translate-x-[4px] active:translate-y-[4px] transition-all"
+            >
+              View Pricing
+            </button>
+            <button
+              class="bg-white text-zinc-800 border-4 border-zinc-800 px-8 py-4 font-headline-md rounded-xl shadow-[6px_6px_0px_0px_rgba(43,47,52,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none active:translate-x-[4px] active:translate-y-[4px] transition-all"
+            >
+              Portfolio
+            </button>
+          </div>
+        </div>
+        <div class="flex-1 relative">
+          <div
+            class="absolute -inset-4 bg-secondary-container border-4 border-zinc-800 rounded-2xl rotate-3 -z-10"
+          ></div>
+          <div
+            class="bg-white border-4 border-zinc-800 p-4 rounded-2xl shadow-[12px_12px_0px_0px_rgba(43,47,52,1)]"
+          >
+            <img
+              alt="Artist Portfolio Hero"
+              class="w-full h-auto rounded-lg border-2 border-zinc-800"
+              data-alt="A vibrant, stylized digital illustration of a cheerful artist in their studio, surrounded by floating art supplies and colorful paint splashes. The art style is bold with thick charcoal outlines and a bright, playful color palette dominated by sky blue and creamy white. The lighting is warm and inviting, emphasizing a tactile, hand-drawn comic book aesthetic. The character has an expressive, joyful face that embodies a friendly and professional creative spirit."
+              src="https://placehold.co/600x400?text=Home+Image"
+            />
+          </div>
+        </div>
+      </section>
+      <!-- Dos and Don'ts Section -->
+      <section class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-24">
+        <!-- I Can Do -->
+        <div
+          class="bg-white border-4 border-zinc-800 p-8 rounded-3xl shadow-[8px_8px_0px_0px_rgba(43,47,52,1)]"
+        >
+          <div class="flex items-center gap-4 mb-8">
+            <div
+              class="w-12 h-12 bg-green-200 border-4 border-zinc-800 rounded-full flex items-center justify-center"
+            >
+              <span class="material-symbols-outlined text-zinc-800 font-bold"
+                >check</span
+              >
+            </div>
+            <h2 class="font-headline-lg text-zinc-800">I Can Do</h2>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div
+              class="flex items-center gap-3 p-3 bg-secondary-fixed rounded-xl border-2 border-zinc-800"
+            >
+              <span class="material-symbols-outlined text-primary">person</span>
+              <span class="font-label-bold uppercase">OCs</span>
+            </div>
+            <div
+              class="flex items-center gap-3 p-3 bg-secondary-fixed rounded-xl border-2 border-zinc-800"
+            >
+              <span class="material-symbols-outlined text-primary"
+                >favorite</span
+              >
+              <span class="font-label-bold uppercase">Fanarts</span>
+            </div>
+            <div
+              class="flex items-center gap-3 p-3 bg-secondary-fixed rounded-xl border-2 border-zinc-800"
+            >
+              <span class="material-symbols-outlined text-primary">face</span>
+              <span class="font-label-bold uppercase">Human</span>
+            </div>
+            <div
+              class="flex items-center gap-3 p-3 bg-secondary-fixed rounded-xl border-2 border-zinc-800"
+            >
+              <span class="material-symbols-outlined text-primary">pets</span>
+              <span class="font-label-bold uppercase">Non-human</span>
+            </div>
+            <div
+              class="flex items-center gap-3 p-3 bg-secondary-fixed rounded-xl border-2 border-zinc-800"
+            >
+              <span class="material-symbols-outlined text-primary"
+                >auto_awesome</span
+              >
+              <span class="font-label-bold uppercase">Kemonomimi</span>
+            </div>
+            <div
+              class="flex items-center gap-3 p-3 bg-secondary-fixed rounded-xl border-2 border-zinc-800"
+            >
+              <span class="material-symbols-outlined text-primary">groups</span>
+              <span class="font-label-bold uppercase">Couples/Ships</span>
+            </div>
+            <div
+              class="flex items-center gap-3 p-3 bg-secondary-fixed rounded-xl border-2 border-zinc-800"
+            >
+              <span class="material-symbols-outlined text-primary"
+                >water_drop</span
+              >
+              <span class="font-label-bold uppercase">Light gore</span>
+            </div>
+            <div
+              class="flex items-center gap-3 p-3 bg-secondary-fixed rounded-xl border-2 border-zinc-800"
+            >
+              <span class="material-symbols-outlined text-primary"
+                >celebration</span
+              >
+              <span class="font-label-bold uppercase">Suggestive</span>
+            </div>
+          </div>
+        </div>
+        <!-- Nope/Don't Do -->
+        <div
+          class="bg-white border-4 border-zinc-800 p-8 rounded-3xl shadow-[8px_8px_0px_0px_rgba(43,47,52,1)]"
+        >
+          <div class="flex items-center gap-4 mb-8">
+            <div
+              class="w-12 h-12 bg-red-200 border-4 border-zinc-800 rounded-full flex items-center justify-center"
+            >
+              <span class="material-symbols-outlined text-zinc-800 font-bold"
+                >close</span
+              >
+            </div>
+            <h2 class="font-headline-lg text-zinc-800">Nope/Don't Do</h2>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div
+              class="flex items-center gap-3 p-3 bg-error-container rounded-xl border-2 border-zinc-800 opacity-80"
+            >
+              <span class="material-symbols-outlined text-error">block</span>
+              <span class="font-label-bold uppercase">NSFW</span>
+            </div>
+            <div
+              class="flex items-center gap-3 p-3 bg-error-container rounded-xl border-2 border-zinc-800 opacity-80"
+            >
+              <span class="material-symbols-outlined text-error">skull</span>
+              <span class="font-label-bold uppercase">Heavy gore</span>
+            </div>
+            <div
+              class="flex items-center gap-3 p-3 bg-error-container rounded-xl border-2 border-zinc-800 opacity-80"
+            >
+              <span class="material-symbols-outlined text-error">report</span>
+              <span class="font-label-bold uppercase">Problematic</span>
+            </div>
+            <div
+              class="flex items-center gap-3 p-3 bg-error-container rounded-xl border-2 border-zinc-800 opacity-80"
+            >
+              <span class="material-symbols-outlined text-error">mood_bad</span>
+              <span class="font-label-bold uppercase">Fetish</span>
+            </div>
+            <div
+              class="flex items-center gap-3 p-3 bg-error-container rounded-xl border-2 border-zinc-800 opacity-80"
+            >
+              <span class="material-symbols-outlined text-error"
+                >thumb_down</span
+              >
+              <span class="font-label-bold uppercase">Hate art</span>
+            </div>
+            <div
+              class="flex items-center gap-3 p-3 bg-error-container rounded-xl border-2 border-zinc-800 opacity-80"
+            >
+              <span class="material-symbols-outlined text-error">warning</span>
+              <span class="font-label-bold uppercase">Racist/Ableist</span>
+            </div>
+            <div
+              class="flex items-center gap-3 p-3 bg-error-container rounded-xl border-2 border-zinc-800 opacity-80"
+            >
+              <span class="material-symbols-outlined text-error">cancel</span>
+              <span class="font-label-bold uppercase">Hoyoverse</span>
+            </div>
+            <div
+              class="flex items-center gap-3 p-3 bg-error-container rounded-xl border-2 border-zinc-800 opacity-80"
+            >
+              <span class="material-symbols-outlined text-error"
+                >dangerous</span
+              >
+              <span class="font-label-bold uppercase">Offensive</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Gallery Teaser -->
+      <section class="mb-24">
+        <div class="text-center mb-12">
+          <h2 class="font-headline-lg text-zinc-800 mb-4">Latest Works</h2>
+          <div
+            class="h-1.5 w-32 bg-primary-container mx-auto border-2 border-zinc-800 rounded-full"
+          ></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div
+            class="bg-white border-4 border-zinc-800 p-4 rounded-2xl shadow-[6px_6px_0px_0px_rgba(43,47,52,1)] hover:-translate-y-2 transition-all"
+          >
+            <img
+              class="w-full aspect-square object-cover rounded-lg border-2 border-zinc-800 mb-4"
+              data-alt="A detailed digital character design illustration featuring a whimsical fantasy adventurer with cat ears and oversized goggles. The art style utilizes vibrant blue and soft pink highlights, set against a dark charcoal background with bold, hand-drawn line work. The character is posing dynamically, showcasing a tactile and sticker-like appearance with a thick white border around the figure. The mood is adventurous and cute, perfectly aligned with the professional best-friend aesthetic of the platform."
+              src="https://placehold.co/400x400?text=Home+Image"
+            />
+            <div class="flex justify-between items-center px-2">
+              <span class="font-label-bold uppercase text-zinc-800"
+                >Character Design</span
+              >
+              <span
+                class="bg-secondary-container px-3 py-1 rounded-full border-2 border-zinc-800 text-xs font-bold"
+                >$45+</span
+              >
+            </div>
+          </div>
+          <div
+            class="bg-white border-4 border-zinc-800 p-4 rounded-2xl shadow-[6px_6px_0px_0px_rgba(43,47,52,1)] hover:-translate-y-2 transition-all"
+          >
+            <img
+              class="w-full aspect-square object-cover rounded-lg border-2 border-zinc-800 mb-4"
+              data-alt="An expressive digital couple portrait in a playful, cartoony style. The two characters are interacting playfully in a bright, sunlit park setting. The color palette features warm golds, vibrant light blues, and deep charcoal shadows for definition. The overall visual style is thick and chunky, avoiding thin lines in favor of bold, expressive strokes that feel physically present. The lighting is high-key and joyous, emphasizing a modern and friendly art commission vibe."
+              src="https://placehold.co/400x400?text=Home+Image"
+            />
+            <div class="flex justify-between items-center px-2">
+              <span class="font-label-bold uppercase text-zinc-800"
+                >Couple Portrait</span
+              >
+              <span
+                class="bg-secondary-container px-3 py-1 rounded-full border-2 border-zinc-800 text-xs font-bold"
+                >$70+</span
+              >
+            </div>
+          </div>
+          <div
+            class="bg-white border-4 border-zinc-800 p-4 rounded-2xl shadow-[6px_6px_0px_0px_rgba(43,47,52,1)] hover:-translate-y-2 transition-all"
+          >
+            <img
+              class="w-full aspect-square object-cover rounded-lg border-2 border-zinc-800 mb-4"
+              data-alt="A stylized digital art piece depicting a personified animal character wearing modern streetwear. The illustration has a distinct comic book flavor with halftone patterns and heavy, hand-inked outlines. The background is a flat, pale grey-blue that makes the vibrant character stand out. The lighting is directional and dramatic, creating hard shadows that give the art a sticker-like pop. The aesthetic is professional yet approachable, reflecting a blend of Brutalism and Playfulness."
+              src="https://placehold.co/400x400?text=Home+Image"
+            />
+            <div class="flex justify-between items-center px-2">
+              <span class="font-label-bold uppercase text-zinc-800"
+                >Streetwear OC</span
+              >
+              <span
+                class="bg-secondary-container px-3 py-1 rounded-full border-2 border-zinc-800 text-xs font-bold"
+                >$55+</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    
+      </section>
+
+      <section id="gallery" class="page-section hidden">
+
+      <!-- Hero Section -->
+      <header class="mb-16">
+        <h1 class="font-headline-xl text-headline-xl text-on-surface mb-4">
+          The Gallery
+        </h1>
+        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+          A colorful collection of visual stories, character designs, and
+          late-night sketches fueled by sheer creativity and too much coffee.
+        </p>
+      </header>
+      <!-- Categories Filter -->
+      <div class="flex flex-wrap gap-4 mb-12">
+        <button
+          class="bg-primary-container text-on-primary-container font-label-bold text-label-bold px-6 py-3 rounded-full border-2 border-zinc-800 hard-shadow active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all"
+        >
+          All Works
+        </button>
+        <button
+          class="bg-secondary-container text-on-secondary-container font-label-bold text-label-bold px-6 py-3 rounded-full border-2 border-zinc-800 hard-shadow-hover active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all"
+        >
+          Characters
+        </button>
+        <button
+          class="bg-secondary-container text-on-secondary-container font-label-bold text-label-bold px-6 py-3 rounded-full border-2 border-zinc-800 hard-shadow-hover active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all"
+        >
+          Illustrations
+        </button>
+        <button
+          class="bg-secondary-container text-on-secondary-container font-label-bold text-label-bold px-6 py-3 rounded-full border-2 border-zinc-800 hard-shadow-hover active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all"
+        >
+          Sketches
+        </button>
+      </div>
+      <!-- Portfolio Bento Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+        <!-- Large Featured Card -->
+        <div
+          class="md:col-span-8 bg-white border-[3px] border-zinc-800 p-4 hard-shadow group"
+        >
+          <div class="overflow-hidden border-2 border-zinc-800 mb-4 h-[400px]">
+            <img
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              data-alt="A vibrant digital illustration of a futuristic cityscape with soft, pastel blue and pink lighting. The scene is rendered in a playful, comic-book style with thick charcoal outlines and exaggerated perspective. Glowing neon signs and hovering vehicles create a sense of whimsical motion, maintaining a high-contrast and tactile brutalist aesthetic."
+              src="https://placehold.co/600x400?text=Gallery+Image"
+            />
+          </div>
+          <div class="flex justify-between items-end">
+            <div>
+              <span
+                class="bg-secondary-container text-on-secondary-container px-3 py-1 border border-zinc-800 text-xs font-bold uppercase mb-2 inline-block"
+                >Illustration</span
+              >
+              <h3 class="font-headline-md text-headline-md">
+                Neon Dreams Metropolis
+              </h3>
+            </div>
+            <span
+              class="material-symbols-outlined text-zinc-800 text-3xl"
+              data-icon="arrow_outward"
+              >arrow_outward</span
+            >
+          </div>
+        </div>
+        <!-- Small Vertical Card -->
+        <div
+          class="md:col-span-4 bg-white border-[3px] border-zinc-800 p-4 hard-shadow group"
+        >
+          <div class="overflow-hidden border-2 border-zinc-800 mb-4 h-[400px]">
+            <img
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              data-alt="An expressive character design of a joyful robot gardener tending to giant glowing flowers. The style features heavy charcoal linework and a primary blue color palette with pale grey-blue accents. The robot has a squishy, rounded form that feels physical and tactile, set against a minimalist white background."
+              src="https://placehold.co/600x400?text=Gallery+Image"
+            />
+          </div>
+          <span
+            class="bg-secondary-container text-on-secondary-container px-3 py-1 border border-zinc-800 text-xs font-bold uppercase mb-2 inline-block"
+            >Characters</span
+          >
+          <h3 class="font-headline-md text-headline-md">Botany Bot v2.0</h3>
+        </div>
+        <!-- Regular Grid Items -->
+        <div
+          class="md:col-span-4 bg-white border-[3px] border-zinc-800 p-4 hard-shadow group"
+        >
+          <div class="overflow-hidden border-2 border-zinc-800 mb-4 h-[250px]">
+            <img
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              data-alt="A playful still life illustration of artist tools including chunky pens, paint tubes, and a mug of coffee. The artwork is rendered with thick hand-inked borders and a vibrant color palette of primary blue and charcoal. The mood is friendly and professional yet bursting with creative energy and illustrative playfulness."
+              src="https://placehold.co/600x400?text=Gallery+Image"
+            />
+          </div>
+          <h3 class="font-headline-md text-headline-md">Creative Chaos</h3>
+        </div>
+        <div
+          class="md:col-span-4 bg-white border-[3px] border-zinc-800 p-4 hard-shadow group"
+        >
+          <div class="overflow-hidden border-2 border-zinc-800 mb-4 h-[250px]">
+            <img
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              data-alt="A collection of character headshots showing various expressions, from joy to surprise. The sketches use loose but deliberate charcoal lines on a pale blue background. Each character has an organic, exaggerated form that fits the comic-book inspired aesthetic of the professional best friend brand identity."
+              src="https://placehold.co/600x400?text=Gallery+Image"
+            />
+          </div>
+          <h3 class="font-headline-md text-headline-md">Expression Sheet</h3>
+        </div>
+        <div
+          class="md:col-span-4 bg-white border-[3px] border-zinc-800 p-4 hard-shadow group"
+        >
+          <div class="overflow-hidden border-2 border-zinc-800 mb-4 h-[250px]">
+            <img
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              data-alt="An abstract landscape painting with bold geometric forms and heavy dark charcoal strokes. The color palette centers around light blue and pale grey-blue, creating a gallery-like feel. The composition is asymmetrical and modern, utilizing the tactile brutalism style to create depth through thick, hard shadows."
+              src="https://placehold.co/600x400?text=Gallery+Image"
+            />
+          </div>
+          <h3 class="font-headline-md text-headline-md">Azure Horizon</h3>
+        </div>
+        <!-- Full Width Call to Action Card -->
+        <div
+          class="md:col-span-12 bg-primary-container border-[4px] border-zinc-800 p-12 hard-shadow flex flex-col md:flex-row items-center justify-between gap-8 mt-8"
+        >
+          <div class="max-w-xl">
+            <h2
+              class="font-headline-xl text-headline-xl text-on-primary-container mb-4"
+            >
+              Want something custom?
+            </h2>
+            <p
+              class="font-body-lg text-body-lg text-on-primary-container opacity-90"
+            >
+              I'm currently open for commissions! Whether it's a character for
+              your RPG or a full-scale illustration for your brand, let's make
+              something amazing together.
+            </p>
+          </div>
+          <button
+            class="bg-white text-zinc-800 font-headline-md text-headline-md px-10 py-5 border-[3px] border-zinc-800 hard-shadow hover:translate-x-[2px] hover:translate-y-[2px] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all whitespace-nowrap"
+          >
+            Start a Project
+          </button>
+        </div>
+      </div>
+    
+      </section>
+
+      <section id="pricing" class="page-section hidden">
+
+      <!-- Header Section -->
+      <header class="mb-16 text-center">
+        <h1 class="font-headline-xl text-headline-xl text-zinc-800 mb-4">
+          Commission Pricing
+        </h1>
+        <p class="font-body-lg text-body-lg text-secondary max-w-2xl mx-auto">
+          Ready to bring your characters to life? Choose a style that fits your
+          vision. All commissions include personal use rights and high-res
+          files.
+        </p>
+      </header>
+      <!-- Pricing Bento/Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter items-start">
+        <!-- Simple Sketch -->
+        <div
+          class="bg-white border-[3px] border-zinc-800 rounded-xl hard-shadow flex flex-col h-full overflow-hidden"
+        >
+          <div
+            class="aspect-video w-full border-b-[3px] border-zinc-800 overflow-hidden"
+          >
+            <img
+              class="w-full h-full object-cover"
+              data-alt="A collection of dynamic charcoal sketches on textured paper, showing various character expressions and poses. The lines are raw and energetic, with subtle blue pencil under-drawings. The lighting is soft and natural, coming from a side window in a cozy artist's studio. The overall mood is creative, informal, and professional."
+              src="https://placehold.co/600x400?text=Pricing+Image"
+            />
+          </div>
+          <div class="p-8 flex-grow">
+            <div class="flex items-center gap-2 mb-2">
+              <span
+                class="material-symbols-outlined text-primary"
+                data-icon="edit"
+                >edit</span
+              >
+              <h2 class="font-headline-md text-headline-md text-zinc-800">
+                Simple Sketch
+              </h2>
+            </div>
+            <p class="font-body-md text-zinc-600 mb-8">
+              Loose, expressive lines with minimal shading. Perfect for quick
+              character concepts.
+            </p>
+            <ul class="space-y-4">
+              <li
+                class="flex justify-between items-center pb-2 border-b border-zinc-100"
+              >
+                <span class="font-label-bold text-zinc-700">Headshot</span>
+                <span class="font-headline-md text-primary">$12</span>
+              </li>
+              <li
+                class="flex justify-between items-center pb-2 border-b border-zinc-100"
+              >
+                <span class="font-label-bold text-zinc-700">Bust up</span>
+                <span class="font-headline-md text-primary">$9</span>
+              </li>
+              <li
+                class="flex justify-between items-center pb-2 border-b border-zinc-100"
+              >
+                <span class="font-label-bold text-zinc-700">Half body</span>
+                <span class="font-headline-md text-primary">$12</span>
+              </li>
+              <li class="flex justify-between items-center">
+                <span class="font-label-bold text-zinc-700">Full body</span>
+                <span class="font-headline-md text-primary">$15</span>
+              </li>
+            </ul>
+          </div>
+          <div class="p-8 pt-0">
+            <button
+              class="w-full py-4 bg-white border-[3px] border-zinc-800 rounded-lg font-label-bold hard-shadow hard-shadow-hover hard-shadow-active transition-all"
+            >
+              Select Sketch
+            </button>
+          </div>
+        </div>
+        <!-- Clean Lineart (Featured) -->
+        <div
+          class="bg-secondary-container border-[3px] border-zinc-800 rounded-xl hard-shadow flex flex-col h-full overflow-hidden relative transform md:-translate-y-4"
+        >
+          <div
+            class="absolute top-4 right-4 bg-primary-container border-2 border-zinc-800 px-3 py-1 rounded-full text-xs font-label-bold z-10"
+          >
+            POPULAR
+          </div>
+          <div
+            class="aspect-video w-full border-b-[3px] border-zinc-800 overflow-hidden"
+          >
+            <img
+              class="w-full h-full object-cover"
+              data-alt="Clean and crisp digital line art of a whimsical character, featuring bold varied line weights and a blue-tinted background. The composition is centered and modern, using a comic-book style aesthetic. Lighting is flat but defined by the thickness of the ink strokes. The mood is sharp, professional, and playful."
+              src="https://placehold.co/600x400?text=Pricing+Image"
+            />
+          </div>
+          <div class="p-8 flex-grow">
+            <div class="flex items-center gap-2 mb-2">
+              <span
+                class="material-symbols-outlined text-primary"
+                data-icon="ink_pen"
+                >ink_pen</span
+              >
+              <h2 class="font-headline-md text-headline-md text-zinc-800">
+                Clean Lineart
+              </h2>
+            </div>
+            <p class="font-body-md text-zinc-600 mb-8">
+              Polished, professional ink work with varied line weights and flat
+              colors.
+            </p>
+            <ul class="space-y-4">
+              <li
+                class="flex justify-between items-center pb-2 border-b border-zinc-800/10"
+              >
+                <span class="font-label-bold text-zinc-700">Headshot</span>
+                <span class="font-headline-md text-primary">$14</span>
+              </li>
+              <li
+                class="flex justify-between items-center pb-2 border-b border-zinc-800/10"
+              >
+                <span class="font-label-bold text-zinc-700">Bust up</span>
+                <span class="font-headline-md text-primary">$16</span>
+              </li>
+              <li
+                class="flex justify-between items-center pb-2 border-b border-zinc-800/10"
+              >
+                <span class="font-label-bold text-zinc-700">Half body</span>
+                <span class="font-headline-md text-primary">$22</span>
+              </li>
+              <li class="flex justify-between items-center">
+                <span class="font-label-bold text-zinc-700">Full body</span>
+                <span class="font-headline-md text-primary">$26</span>
+              </li>
+            </ul>
+          </div>
+          <div class="p-8 pt-0">
+            <button
+              class="w-full py-4 bg-primary-container border-[3px] border-zinc-800 rounded-lg font-label-bold hard-shadow hard-shadow-hover hard-shadow-active transition-all"
+            >
+              Select Lineart
+            </button>
+          </div>
+        </div>
+        <!-- Full Render -->
+        <div
+          class="bg-white border-[3px] border-zinc-800 rounded-xl hard-shadow flex flex-col h-full overflow-hidden"
+        >
+          <div
+            class="aspect-video w-full border-b-[3px] border-zinc-800 overflow-hidden"
+          >
+            <img
+              class="w-full h-full object-cover"
+              data-alt="A high-end digital painting featuring rich textures, deep shadows, and cinematic lighting in shades of blue and charcoal. The subject is a detailed character portrait with soft skin rendering and intricate clothing details. The mood is premium, gallery-quality, and deeply expressive, utilizing a soft glow effect."
+              src="https://placehold.co/600x400?text=Pricing+Image"
+            />
+          </div>
+          <div class="p-8 flex-grow">
+            <div class="flex items-center gap-2 mb-2">
+              <span
+                class="material-symbols-outlined text-primary"
+                data-icon="brush"
+                >brush</span
+              >
+              <h2 class="font-headline-md text-headline-md text-zinc-800">
+                Full Render
+              </h2>
+            </div>
+            <p class="font-body-md text-zinc-600 mb-8">
+              Fully painted illustration with cinematic lighting, depth, and
+              rich textures.
+            </p>
+            <ul class="space-y-4">
+              <li
+                class="flex justify-between items-center pb-2 border-b border-zinc-100"
+              >
+                <span class="font-label-bold text-zinc-700">Headshot</span>
+                <span class="font-headline-md text-primary">$24</span>
+              </li>
+              <li
+                class="flex justify-between items-center pb-2 border-b border-zinc-100"
+              >
+                <span class="font-label-bold text-zinc-700">Bust up</span>
+                <span class="font-headline-md text-primary">$30</span>
+              </li>
+              <li
+                class="flex justify-between items-center pb-2 border-b border-zinc-100"
+              >
+                <span class="font-label-bold text-zinc-700">Half body</span>
+                <span class="font-headline-md text-primary">$36</span>
+              </li>
+              <li class="flex justify-between items-center">
+                <span class="font-label-bold text-zinc-700">Full body</span>
+                <span class="font-headline-md text-primary">$42</span>
+              </li>
+            </ul>
+          </div>
+          <div class="p-8 pt-0">
+            <button
+              class="w-full py-4 bg-white border-[3px] border-zinc-800 rounded-lg font-label-bold hard-shadow hard-shadow-hover hard-shadow-active transition-all"
+            >
+              Select Render
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Add-ons Section -->
+      <section class="mt-20">
+        <h3
+          class="font-headline-lg text-headline-lg text-zinc-800 mb-8 flex items-center gap-4"
+        >
+          <span
+            class="material-symbols-outlined text-4xl"
+            data-icon="add_circle"
+            >add_circle</span
+          >
+          Add-ons &amp; Extras
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Backgrounds -->
+          <div
+            class="bg-surface-container-low p-8 border-[3px] border-zinc-800 rounded-xl hard-shadow flex gap-6 items-start"
+          >
+            <div
+              class="bg-primary-container p-4 rounded-xl border-2 border-zinc-800 shrink-0"
+            >
+              <span
+                class="material-symbols-outlined text-3xl"
+                data-icon="landscape"
+                >landscape</span
+              >
+            </div>
+            <div>
+              <h4 class="font-headline-md text-headline-md text-zinc-800 mb-2">
+                Backgrounds
+              </h4>
+              <p class="font-body-md text-secondary mb-4">
+                From simple shapes to fully detailed environments.
+              </p>
+              <div class="flex flex-wrap gap-3">
+                <span
+                  class="px-4 py-1 bg-secondary-fixed-dim border-2 border-zinc-800 rounded-full font-label-bold text-xs"
+                  >$2 - Simple</span
+                >
+                <span
+                  class="px-4 py-1 bg-secondary-fixed-dim border-2 border-zinc-800 rounded-full font-label-bold text-xs"
+                  >$8 - Thematic</span
+                >
+                <span
+                  class="px-4 py-1 bg-secondary-fixed-dim border-2 border-zinc-800 rounded-full font-label-bold text-xs"
+                  >$15 - Full Scene</span
+                >
+              </div>
+            </div>
+          </div>
+          <!-- Extra Characters -->
+          <div
+            class="bg-surface-container-low p-8 border-[3px] border-zinc-800 rounded-xl hard-shadow flex gap-6 items-start"
+          >
+            <div
+              class="bg-primary-container p-4 rounded-xl border-2 border-zinc-800 shrink-0"
+            >
+              <span class="material-symbols-outlined text-3xl" data-icon="group"
+                >group</span
+              >
+            </div>
+            <div>
+              <h4 class="font-headline-md text-headline-md text-zinc-800 mb-2">
+                Extra Characters
+              </h4>
+              <p class="font-body-md text-secondary mb-4">
+                Add more friends or foes to your custom illustration.
+              </p>
+              <div
+                class="inline-block px-6 py-2 bg-primary-fixed border-2 border-zinc-800 rounded-lg font-headline-md"
+              >
+                +60% Base Price
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Terms Summary -->
+      <section
+        class="mt-20 p-10 bg-white border-[3px] border-zinc-800 rounded-xl hard-shadow"
+      >
+        <h3 class="font-headline-md text-headline-md text-zinc-800 mb-6">
+          Commission Terms
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <div class="font-label-bold text-primary mb-2">TAT</div>
+            <p class="text-zinc-600 font-body-md">
+              2-4 weeks depending on complexity.
+            </p>
+          </div>
+          <div>
+            <div class="font-label-bold text-primary mb-2">REVISIONS</div>
+            <p class="text-zinc-600 font-body-md">
+              2 free major revisions at sketch phase.
+            </p>
+          </div>
+          <div>
+            <div class="font-label-bold text-primary mb-2">PAYMENT</div>
+            <p class="text-zinc-600 font-body-md">
+              Full payment upfront via PayPal or Ko-fi.
+            </p>
+          </div>
+          <div>
+            <div class="font-label-bold text-primary mb-2">USAGE</div>
+            <p class="text-zinc-600 font-body-md">
+              Personal use only. Commercial x2 price.
+            </p>
+          </div>
+        </div>
+      </section>
+    
+      </section>
+
+      <section id="tos" class="page-section hidden">
+
+      <!-- Hero Section / Title -->
+      <section class="text-center space-y-6">
+        <div
+          class="inline-block px-4 py-2 bg-secondary-container text-on-secondary-container border-2 border-zinc-800 rounded-full font-label-bold mb-4"
+        >
+          Working with Tabitha
+        </div>
+        <h1 class="font-headline-xl text-headline-xl text-zinc-800">
+          Terms of Service &amp; Contact
+        </h1>
+        <p class="font-body-lg text-body-lg text-zinc-600 max-w-2xl mx-auto">
+          Everything you need to know about starting a project together. I keep
+          things simple, fun, and fair for everyone!
+        </p>
+      </section>
+      <!-- Main Content Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+        <!-- Terms of Service Section (Left Column) -->
+        <div class="lg:col-span-7 space-y-8">
+          <div
+            class="bg-white border-4 border-zinc-800 p-8 rounded-xl brutal-shadow"
+          >
+            <div class="flex items-center gap-4 mb-8">
+              <span
+                class="material-symbols-outlined text-4xl text-primary"
+                data-icon="gavel"
+                >gavel</span
+              >
+              <h2 class="font-headline-lg text-headline-lg">General Terms</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <!-- Rule 1 -->
+              <div
+                class="p-4 bg-surface-container-low border-2 border-zinc-800 rounded-lg flex gap-4 items-start"
+              >
+                <span
+                  class="material-symbols-outlined text-error"
+                  data-icon="block"
+                  >block</span
+                >
+                <div>
+                  <h3 class="font-label-bold text-zinc-800">1. No AI/NFT</h3>
+                  <p class="text-sm text-zinc-600 mt-1 italic">
+                    I do not work on projects involving AI generation or NFT
+                    minting.
+                  </p>
+                </div>
+              </div>
+              <!-- Rule 2 -->
+              <div
+                class="p-4 bg-surface-container-low border-2 border-zinc-800 rounded-lg flex gap-4 items-start"
+              >
+                <span
+                  class="material-symbols-outlined text-primary"
+                  data-icon="image"
+                  >image</span
+                >
+                <div>
+                  <h3 class="font-label-bold text-zinc-800">
+                    2. Refs Required
+                  </h3>
+                  <p class="text-sm text-zinc-600 mt-1 italic">
+                    Clear visual references or detailed descriptions are
+                    required before starting.
+                  </p>
+                </div>
+              </div>
+              <!-- Rule 3 -->
+              <div
+                class="p-4 bg-surface-container-low border-2 border-zinc-800 rounded-lg flex gap-4 items-start"
+              >
+                <span
+                  class="material-symbols-outlined text-primary"
+                  data-icon="payments"
+                  >payments</span
+                >
+                <div>
+                  <h3 class="font-label-bold text-zinc-800">3. Payment</h3>
+                  <p class="text-sm text-zinc-600 mt-1 italic">
+                    Payment is required after the initial sketch approval.
+                  </p>
+                </div>
+              </div>
+              <!-- Rule 4 -->
+              <div
+                class="p-4 bg-surface-container-low border-2 border-zinc-800 rounded-lg flex gap-4 items-start"
+              >
+                <span
+                  class="material-symbols-outlined text-error"
+                  data-icon="cancel"
+                  >cancel</span
+                >
+                <div>
+                  <h3 class="font-label-bold text-zinc-800">4. No Refunds</h3>
+                  <p class="text-sm text-zinc-600 mt-1 italic">
+                    Once the final coloring phase begins, no refunds will be
+                    issued.
+                  </p>
+                </div>
+              </div>
+              <!-- Rule 5 -->
+              <div
+                class="p-4 bg-surface-container-low border-2 border-zinc-800 rounded-lg flex gap-4 items-start"
+              >
+                <span
+                  class="material-symbols-outlined text-primary"
+                  data-icon="schedule"
+                  >schedule</span
+                >
+                <div>
+                  <h3 class="font-label-bold text-zinc-800">
+                    5. 2-21 Day Window
+                  </h3>
+                  <p class="text-sm text-zinc-600 mt-1 italic">
+                    Turnaround time varies between 2 to 21 days based on
+                    complexity.
+                  </p>
+                </div>
+              </div>
+              <!-- Rule 6 -->
+              <div
+                class="p-4 bg-surface-container-low border-2 border-zinc-800 rounded-lg flex gap-4 items-start"
+              >
+                <span
+                  class="material-symbols-outlined text-primary"
+                  data-icon="copyright"
+                  >copyright</span
+                >
+                <div>
+                  <h3 class="font-label-bold text-zinc-800">
+                    6. Credit Required
+                  </h3>
+                  <p class="text-sm text-zinc-600 mt-1 italic">
+                    Please credit 'ArtStationary' when posting the artwork
+                    online.
+                  </p>
+                </div>
+              </div>
+              <!-- Rule 7 -->
+              <div
+                class="p-4 bg-surface-container-low border-2 border-zinc-800 rounded-lg flex gap-4 items-start col-span-1 md:col-span-2"
+              >
+                <span
+                  class="material-symbols-outlined text-error"
+                  data-icon="storefront_off"
+                  >storefront</span
+                >
+                <div>
+                  <h3 class="font-label-bold text-zinc-800">7. No Reselling</h3>
+                  <p class="text-sm text-zinc-600 mt-1 italic">
+                    Artwork is for personal use only. Commercial reselling is
+                    strictly prohibited without prior written agreement.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Contact & Payment Section (Right Column) -->
+        <div class="lg:col-span-5 space-y-8">
+          <!-- Payment Card -->
+          <div
+            class="bg-primary-container border-4 border-zinc-800 p-8 rounded-xl brutal-shadow relative overflow-hidden"
+          >
+            <div
+              class="absolute -top-4 -right-4 w-24 h-24 bg-white/20 rounded-full blur-xl"
+            ></div>
+            <div class="flex items-center gap-4 mb-6">
+              <span
+                class="material-symbols-outlined text-4xl text-on-primary-container"
+                data-icon="wallet"
+                >wallet</span
+              >
+              <h2
+                class="font-headline-md text-headline-md text-on-primary-container"
+              >
+                Payment Info
+              </h2>
+            </div>
+            <div class="space-y-4">
+              <div class="bg-white border-3 border-zinc-800 p-4 rounded-lg">
+                <div class="flex justify-between items-center">
+                  <span class="font-label-bold text-zinc-500">Method</span>
+                  <span class="font-bold text-zinc-800 text-lg">PayPal</span>
+                </div>
+              </div>
+              <div class="bg-white border-3 border-zinc-800 p-4 rounded-lg">
+                <span class="font-label-bold text-zinc-500 block mb-1"
+                  >Email / USD Only</span
+                >
+                <span class="font-bold text-primary text-xl break-all"
+                  >thecooltabitha@gmail.com</span
+                >
+              </div>
+            </div>
+            <div
+              class="mt-6 flex items-center gap-2 text-on-primary-container font-label-bold italic"
+            >
+              <span class="material-symbols-outlined" data-icon="info"
+                >info</span
+              >
+              Please include your order # in the notes!
+            </div>
+          </div>
+          <!-- Contact & Socials -->
+          <div
+            class="bg-white border-4 border-zinc-800 p-8 rounded-xl brutal-shadow"
+          >
+            <h2 class="font-headline-md text-headline-md mb-6">
+              Find Me Elsewhere
+            </h2>
+            <div class="flex flex-col gap-4">
+              <!-- Discord -->
+              <a
+                class="flex items-center justify-between p-4 border-2 border-zinc-800 rounded-lg hover:bg-tertiary-fixed transition-colors"
+                href="#"
+              >
+                <div class="flex items-center gap-3">
+                  <span
+                    class="material-symbols-outlined text-indigo-500"
+                    data-icon="chat_bubble"
+                    >chat_bubble</span
+                  >
+                  <span class="font-label-bold">Discord</span>
+                </div>
+                <span class="text-zinc-500">@ArtStationary#0000</span>
+              </a>
+              <!-- Instagram -->
+              <a
+                class="flex items-center justify-between p-4 border-2 border-zinc-800 rounded-lg hover:bg-tertiary-fixed transition-colors"
+                href="#"
+              >
+                <div class="flex items-center gap-3">
+                  <span
+                    class="material-symbols-outlined text-pink-500"
+                    data-icon="photo_camera"
+                    >photo_camera</span
+                  >
+                  <span class="font-label-bold">Instagram</span>
+                </div>
+                <span class="text-zinc-500">@ArtStationary</span>
+              </a>
+              <!-- Tiktok -->
+              <a
+                class="flex items-center justify-between p-4 border-2 border-zinc-800 rounded-lg hover:bg-tertiary-fixed transition-colors"
+                href="#"
+              >
+                <div class="flex items-center gap-3">
+                  <span
+                    class="material-symbols-outlined text-black"
+                    data-icon="videocam"
+                    >videocam</span
+                  >
+                  <span class="font-label-bold">TikTok</span>
+                </div>
+                <span class="text-zinc-500">@ArtStationary_vids</span>
+              </a>
+            </div>
+          </div>
+          <!-- Image / Art Card -->
+          <div
+            class="border-4 border-zinc-800 rounded-xl overflow-hidden brutal-shadow bg-zinc-200 aspect-square relative"
+          >
+            <img
+              alt="Cute mascot illustration"
+              class="w-full h-full object-cover grayscale-0"
+              data-alt="A whimsical and colorful hand-drawn illustration of a friendly mascot character, likely a stylized cat or fluffy creature, surrounded by art supplies like pencils and paintbrushes. The style is cartoony with thick charcoal-like outlines and a vibrant palette of soft blues, pinks, and yellows. The lighting is warm and joyful, reflecting a creative and welcoming studio environment. High-contrast elements emphasize the tactile, sticker-like quality of the brand aesthetic."
+              src="https://placehold.co/600x400?text=Tos+Image"
+            />
+            <div
+              class="absolute bottom-4 left-4 bg-white border-2 border-zinc-800 px-3 py-1 rounded-full font-label-bold text-xs uppercase shadow-sm"
+            >
+              Commissions Open!
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Contact Form Section -->
+      <section class="max-w-3xl mx-auto space-y-8">
+        <div class="text-center space-y-4">
+          <h2 class="font-headline-lg text-headline-lg">
+            Send a Direct Inquiry
+          </h2>
+          <p class="text-zinc-600">
+            Have a specific question not covered in the TOS? Drop me a message!
+          </p>
+        </div>
+        <form class="space-y-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="space-y-2">
+              <label class="font-label-bold text-zinc-800 px-1"
+                >Your Name</label
+              >
+              <input
+                class="w-full h-[56px] px-6 border-3 border-zinc-800 rounded-lg bg-white focus:ring-0 focus:border-primary-container outline-none transition-all shadow-[2px_2px_0px_0px_rgba(43,47,52,1)]"
+                placeholder="Tabitha"
+                type="text"
+              />
+            </div>
+            <div class="space-y-2">
+              <label class="font-label-bold text-zinc-800 px-1"
+                >Your Email</label
+              >
+              <input
+                class="w-full h-[56px] px-6 border-3 border-zinc-800 rounded-lg bg-white focus:ring-0 focus:border-primary-container outline-none transition-all shadow-[2px_2px_0px_0px_rgba(43,47,52,1)]"
+                placeholder="example@email.com"
+                type="email"
+              />
+            </div>
+          </div>
+          <div class="space-y-2">
+            <label class="font-label-bold text-zinc-800 px-1"
+              >How can I help?</label
+            >
+            <textarea
+              class="w-full p-6 border-3 border-zinc-800 rounded-lg bg-white focus:ring-0 focus:border-primary-container outline-none transition-all shadow-[2px_2px_0px_0px_rgba(43,47,52,1)]"
+              placeholder="Tell me about your amazing character idea!"
+              rows="5"
+            ></textarea>
+          </div>
+          <button
+            class="w-full h-[64px] bg-primary text-white font-headline-md border-3 border-zinc-800 rounded-xl brutal-shadow brutal-shadow-hover brutal-shadow-active flex items-center justify-center gap-3"
+            type="submit"
+          >
+            Send Inquiry
+            <span class="material-symbols-outlined" data-icon="send">send</span>
+          </button>
+        </form>
+      </section>
+    
+      </section>
+
+      <section id="contact" class="page-section hidden">
+
+      <!-- Hero Section -->
+      <section class="mb-16">
+        <h1 class="font-headline-xl text-headline-xl mb-4">
+          Let's Create <span class="text-primary">Something Wild</span>
+        </h1>
+        <p class="font-body-lg text-body-lg max-w-2xl">
+          I'm currently accepting new commissions! Whether it's a character
+          portrait, a Twitch emote pack, or a full-scale illustration, I'm here
+          to bring your vision to life with a splash of color and a lot of
+          heart.
+        </p>
+      </section>
+      <!-- Bento Grid Layout -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+        <!-- Direct Inquiry Form -->
+        <div
+          class="lg:col-span-7 bg-white border-[3px] border-zinc-800 hard-shadow-lg p-8 rounded-none"
+        >
+          <div class="flex items-center gap-3 mb-8">
+            <span class="material-symbols-outlined text-4xl text-primary"
+              >mail</span
+            >
+            <h2 class="font-headline-lg text-headline-lg">
+              Send a Direct Inquiry
+            </h2>
+          </div>
+          <form class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="flex flex-col gap-2">
+                <label class="font-label-bold text-label-bold uppercase"
+                  >Name</label
+                >
+                <input
+                  class="h-[56px] border-[3px] border-zinc-800 px-4 focus:bg-primary-fixed focus:outline-none focus:ring-0 transition-colors"
+                  placeholder="Your creative name"
+                  type="text"
+                />
+              </div>
+              <div class="flex flex-col gap-2">
+                <label class="font-label-bold text-label-bold uppercase"
+                  >Email</label
+                >
+                <input
+                  class="h-[56px] border-[3px] border-zinc-800 px-4 focus:bg-primary-fixed focus:outline-none focus:ring-0 transition-colors"
+                  placeholder="hello@example.com"
+                  type="email"
+                />
+              </div>
+            </div>
+            <div class="flex flex-col gap-2">
+              <label class="font-label-bold text-label-bold uppercase"
+                >How can I help?</label
+              >
+              <textarea
+                class="border-[3px] border-zinc-800 p-4 focus:bg-primary-fixed focus:outline-none focus:ring-0 transition-colors resize-none"
+                placeholder="Tell me about your project, timeline, and any specific ideas you have in mind!"
+                rows="6"
+              ></textarea>
+            </div>
+            <button
+              class="w-full md:w-auto px-10 py-4 bg-primary-container border-[3px] border-zinc-800 font-bold text-lg hard-shadow-md active-press transition-all flex items-center justify-center gap-2"
+              type="submit"
+            >
+              Shoot over the details
+              <span class="material-symbols-outlined">send</span>
+            </button>
+          </form>
+        </div>
+        <!-- Sidebar Info Column -->
+        <div class="lg:col-span-5 flex flex-col gap-gutter">
+          <!-- Find Me Elsewhere Card -->
+          <div
+            class="bg-secondary-container border-[3px] border-zinc-800 hard-shadow-lg p-8"
+          >
+            <h3 class="font-headline-md text-headline-md mb-6">
+              Find Me Elsewhere
+            </h3>
+            <div class="space-y-4">
+              <a
+                class="flex items-center gap-4 p-4 bg-white border-[3px] border-zinc-800 hard-shadow-sm hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all"
+                href="#"
+              >
+                <span
+                  class="material-symbols-outlined text-primary"
+                  data-weight="fill"
+                  >diversity_3</span
+                >
+                <div class="flex flex-col">
+                  <span class="font-label-bold text-xs uppercase text-zinc-500"
+                    >Discord</span
+                  >
+                  <span class="font-bold text-lg text-zinc-800"
+                    >@ArtStationary#0000</span
+                  >
+                </div>
+              </a>
+              <a
+                class="flex items-center gap-4 p-4 bg-white border-[3px] border-zinc-800 hard-shadow-sm hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all"
+                href="#"
+              >
+                <span
+                  class="material-symbols-outlined text-primary"
+                  data-weight="fill"
+                  >camera</span
+                >
+                <div class="flex flex-col">
+                  <span class="font-label-bold text-xs uppercase text-zinc-500"
+                    >Instagram</span
+                  >
+                  <span class="font-bold text-lg text-zinc-800"
+                    >@ArtStationary</span
+                  >
+                </div>
+              </a>
+              <a
+                class="flex items-center gap-4 p-4 bg-white border-[3px] border-zinc-800 hard-shadow-sm hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all"
+                href="#"
+              >
+                <span
+                  class="material-symbols-outlined text-primary"
+                  data-weight="fill"
+                  >video_library</span
+                >
+                <div class="flex flex-col">
+                  <span class="font-label-bold text-xs uppercase text-zinc-500"
+                    >TikTok</span
+                  >
+                  <span class="font-bold text-lg text-zinc-800"
+                    >@ArtStationary_vids</span
+                  >
+                </div>
+              </a>
+            </div>
+          </div>
+          <!-- Payment Info Card -->
+          <div
+            class="bg-white border-[3px] border-zinc-800 hard-shadow-lg p-8 relative overflow-hidden"
+          >
+            <div class="absolute -right-4 -top-4 opacity-10">
+              <span class="material-symbols-outlined text-[120px] rotate-12"
+                >payments</span
+              >
+            </div>
+            <h3
+              class="font-headline-md text-headline-md mb-4 flex items-center gap-2"
+            >
+              <span class="material-symbols-outlined">wallet</span>
+              Payment Info
+            </h3>
+            <div class="bg-primary-fixed p-6 border-[3px] border-zinc-800">
+              <p class="font-label-bold text-xs uppercase mb-1">
+                Primary Method: PayPal
+              </p>
+              <p class="font-headline-md text-zinc-900 break-all">
+                thecooltabitha@gmail.com
+              </p>
+            </div>
+            <p class="mt-4 text-sm text-on-surface-variant font-medium italic">
+              * Invoices will be sent after the initial sketch approval.
+            </p>
+          </div>
+          <!-- Fun Decorative Image Card -->
+          <div
+            class="flex-grow border-[3px] border-zinc-800 hard-shadow-lg overflow-hidden bg-zinc-200 min-h-[200px]"
+          >
+            <img
+              alt="Artist Workspace"
+              class="w-full h-full object-cover"
+              data-alt="A vibrant and cluttered artist studio workspace with a professional drawing tablet on a wooden desk. Scattered around are colorful markers, sketchbooks with cartoon drawings, and a bright blue mug of coffee. The lighting is warm and joyful, coming from a nearby window, reflecting a playful and creative atmosphere consistent with a comic book aesthetic."
+              src="https://placehold.co/600x400?text=Contact+Image"
+            />
+          </div>
+        </div>
+      </div>
+      <!-- FAQ Prompt -->
+      <section
+        class="mt-20 p-12 bg-zinc-800 text-white flex flex-col md:flex-row items-center justify-between gap-8 border-[3px] border-zinc-900 hard-shadow-lg"
+      >
+        <div class="text-center md:text-left">
+          <h2 class="font-headline-lg text-headline-lg mb-2">Got Questions?</h2>
+          <p class="text-zinc-300 font-body-lg">
+            Check out my Frequently Asked Questions before you send an inquiry!
+          </p>
+        </div>
+        <button
+          class="px-8 py-4 bg-white text-zinc-900 font-bold border-[3px] border-white hard-shadow-sm active-press hover:bg-primary-container transition-all"
+        >
+          Read the FAQ
+        </button>
+      </section>
+    
+      </section>
+
+    </main>
+    <footer
+      class="w-full border-t-4 border-zinc-800 dark:border-zinc-950 mt-12 bg-zinc-100 dark:bg-zinc-950"
+    >
+      <div
+        class="flex flex-col md:flex-row justify-between items-center py-10 px-8 gap-6 w-full max-w-[1280px] mx-auto"
+      >
+        <div
+          class="font-['Plus_Jakarta_Sans'] font-bold text-zinc-800 dark:text-zinc-100"
+        >
+          ArtStationary
+        </div>
+        <p
+          class="font-['Plus_Jakarta_Sans'] font-medium text-sm text-zinc-600 dark:text-zinc-400"
+        >
+          © 2024 ArtStationary. Created with joy and caffeine.
+        </p>
+        <div class="flex gap-6 font-['Plus_Jakarta_Sans'] font-medium text-sm">
+          <a
+            class="text-zinc-600 dark:text-zinc-400 hover:text-blue-400 transition-colors"
+            href="#"
+            >Twitter</a
+          >
+          <a
+            class="text-zinc-600 dark:text-zinc-400 hover:text-blue-400 transition-colors"
+            href="#"
+            >Instagram</a
+          >
+          <a
+            class="text-zinc-600 dark:text-zinc-400 hover:text-blue-400 transition-colors"
+            href="#"
+            >Bluesky</a
+          >
+          <a
+            class="text-zinc-600 dark:text-zinc-400 hover:text-blue-400 transition-colors"
+            href="#"
+            >PayPal</a
+          >
+        </div>
+      </div>
+    </footer>
+    
+    <script>
+      function handleRoute() {
+        const hash = window.location.hash || '#home';
+        document.querySelectorAll('.page-section').forEach(sec => {
+          sec.classList.add('hidden');
+        });
+        
+        const activeSection = document.querySelector(hash);
+        if (activeSection) {
+          activeSection.classList.remove('hidden');
+        } else {
+          // fallback to home
+          document.querySelector('#home').classList.remove('hidden');
+        }
+        
+        // Update nav links styling
+        document.querySelectorAll('nav a').forEach(a => {
+          if (a.getAttribute('href') === hash || (hash === '#home' && a.getAttribute('href') === '#home')) {
+            a.className = "text-zinc-900 dark:text-white border-b-4 border-blue-400 pb-1";
+          } else {
+            a.className = "text-zinc-500 dark:text-zinc-400 hover:text-zinc-800 dark:hover:text-zinc-200 hover:translate-x-[2px] hover:translate-y-[2px] transition-all";
+          }
+        });
+        window.scrollTo(0, 0);
+      }
+
+      window.addEventListener('hashchange', handleRoute);
+      window.addEventListener('DOMContentLoaded', handleRoute);
+      
+      // Update logo link behavior
+      document.addEventListener('DOMContentLoaded', () => {
+        const logo = document.querySelector('header a[href="#home"]');
+        if(logo) {
+            logo.addEventListener('click', (e) => {
+                window.location.hash = '#home';
+            });
+        }
+        
+        // Also update the hire me button
+        const hireMe = document.querySelector('header button');
+        if(hireMe) {
+            hireMe.addEventListener('click', () => {
+                window.location.hash = '#contact';
+            });
+        }
+        
+        // Add listeners to buttons inside sections that might act as links
+        const viewPricingBtn = document.querySelector('#home button:contains("View Pricing")');
+        const startProjectBtn = document.querySelector('#gallery button:contains("Start a Project")');
+        
+        document.querySelectorAll('button').forEach(btn => {
+           if(btn.innerText.includes('View Pricing')) btn.addEventListener('click', () => window.location.hash = '#pricing');
+           if(btn.innerText.includes('Portfolio')) btn.addEventListener('click', () => window.location.hash = '#gallery');
+           if(btn.innerText.includes('Start a Project')) btn.addEventListener('click', () => window.location.hash = '#contact');
+           if(btn.innerText.includes('Select Sketch')) btn.addEventListener('click', () => window.location.hash = '#contact');
+           if(btn.innerText.includes('Select Lineart')) btn.addEventListener('click', () => window.location.hash = '#contact');
+           if(btn.innerText.includes('Select Render')) btn.addEventListener('click', () => window.location.hash = '#contact');
+           if(btn.innerText.includes('Read the FAQ')) btn.addEventListener('click', () => window.location.hash = '#tos');
+        });
+      });
+    </script>
+
+  </body>
+</html>

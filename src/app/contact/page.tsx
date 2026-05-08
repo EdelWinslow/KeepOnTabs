@@ -1,6 +1,11 @@
+"use client";
+
 import FadeIn from "@/components/FadeIn";
+import { useState } from "react";
+import Link from "next/link";
 
 export default function Contact() {
+  const [agreedToTos, setAgreedToTos] = useState(false);
   return (
     <div className="max-w-container-max mx-auto px-8 py-16 w-full flex-grow">
       <FadeIn>
@@ -27,47 +32,68 @@ export default function Contact() {
               Send a Direct Inquiry
             </h2>
           </div>
-          <form className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="flex flex-col gap-2">
-                <label className="font-label-bold text-label-bold uppercase">
-                  Name
+          <div className="relative">
+            {!agreedToTos && (
+              <div className="absolute inset-0 z-10 bg-white/80 backdrop-blur-sm flex flex-col items-center justify-center p-6 text-center border-[3px] border-zinc-800 border-dashed rounded-lg">
+                <span className="material-symbols-outlined text-5xl mb-4 text-zinc-400">lock</span>
+                <h3 className="font-headline-md text-zinc-800 mb-2">Form Locked</h3>
+                <p className="font-body-md text-zinc-600 mb-6 max-w-sm">
+                  Please read the <Link href="/tos" className="text-primary underline font-bold hover:text-zinc-800">Terms of Service</Link> before sending a commission inquiry.
+                </p>
+                
+                <label className="flex items-center gap-3 cursor-pointer group bg-white px-6 py-4 border-[3px] border-zinc-800 hard-shadow-sm hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all active-press">
+                  <div className={`w-6 h-6 border-[3px] border-zinc-800 rounded flex items-center justify-center transition-colors ${agreedToTos ? 'bg-primary' : 'bg-white'}`}>
+                     {agreedToTos && <span className="material-symbols-outlined text-white text-sm font-bold">check</span>}
+                  </div>
+                  <input type="checkbox" className="hidden" checked={agreedToTos} onChange={(e) => setAgreedToTos(e.target.checked)} />
+                  <span className="font-label-bold text-zinc-800 select-none text-left">I agree to the Terms of Service</span>
                 </label>
-                <input
-                  className="h-[56px] border-[3px] border-zinc-800 px-4 focus:bg-primary-fixed focus:outline-none focus:ring-0 transition-colors"
-                  placeholder="Your creative name"
-                  type="text"
-                />
+              </div>
+            )}
+            
+            <form className={`space-y-6 transition-all duration-300 ${!agreedToTos ? 'opacity-30 pointer-events-none grayscale' : ''}`}>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="flex flex-col gap-2">
+                  <label className="font-label-bold text-label-bold uppercase">
+                    Name
+                  </label>
+                  <input
+                    className="h-[56px] border-[3px] border-zinc-800 px-4 focus:bg-primary-fixed focus:outline-none focus:ring-0 transition-colors bg-white"
+                    placeholder="Your creative name"
+                    type="text"
+                  />
+                </div>
+                <div className="flex flex-col gap-2">
+                  <label className="font-label-bold text-label-bold uppercase">
+                    Email
+                  </label>
+                  <input
+                    className="h-[56px] border-[3px] border-zinc-800 px-4 focus:bg-primary-fixed focus:outline-none focus:ring-0 transition-colors bg-white"
+                    placeholder="hello@example.com"
+                    type="email"
+                  />
+                </div>
               </div>
               <div className="flex flex-col gap-2">
                 <label className="font-label-bold text-label-bold uppercase">
-                  Email
+                  How can I help?
                 </label>
-                <input
-                  className="h-[56px] border-[3px] border-zinc-800 px-4 focus:bg-primary-fixed focus:outline-none focus:ring-0 transition-colors"
-                  placeholder="hello@example.com"
-                  type="email"
-                />
+                <textarea
+                  className="border-[3px] border-zinc-800 p-4 focus:bg-primary-fixed focus:outline-none focus:ring-0 transition-colors resize-none bg-white"
+                  placeholder="Tell me about your project, timeline, and any specific ideas you have in mind!"
+                  rows={6}
+                ></textarea>
               </div>
-            </div>
-            <div className="flex flex-col gap-2">
-              <label className="font-label-bold text-label-bold uppercase">
-                How can I help?
-              </label>
-              <textarea
-                className="border-[3px] border-zinc-800 p-4 focus:bg-primary-fixed focus:outline-none focus:ring-0 transition-colors resize-none"
-                placeholder="Tell me about your project, timeline, and any specific ideas you have in mind!"
-                rows={6}
-              ></textarea>
-            </div>
-            <button
-              className="w-full md:w-auto px-10 py-4 bg-primary-container border-[3px] border-zinc-800 font-bold text-lg hard-shadow-md active-press transition-all flex items-center justify-center gap-2 cursor-pointer"
-              type="button"
-            >
-              Shoot over the details
-              <span className="material-symbols-outlined">send</span>
-            </button>
-          </form>
+              <button
+                className="w-full md:w-auto px-10 py-4 bg-primary-container border-[3px] border-zinc-800 font-bold text-lg hard-shadow-md active-press transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+                type="button"
+                disabled={!agreedToTos}
+              >
+                Shoot over the details
+                <span className="material-symbols-outlined">send</span>
+              </button>
+            </form>
+          </div>
         </FadeIn>
 
         <div className="lg:col-span-5 flex flex-col gap-gutter">
