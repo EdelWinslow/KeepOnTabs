@@ -152,14 +152,14 @@ export default function CommissionCalculator() {
                       {flatColors && <span className="material-symbols-outlined text-white text-sm font-bold">check</span>}
                     </div>
                     <input type="checkbox" className="hidden" checked={flatColors} onChange={(e) => setFlatColors(e.target.checked)} />
-                    <span className="font-label-bold text-zinc-700 group-hover:text-primary transition-colors">Flat Colors (+$2)</span>
+                    <span className="font-label-bold text-zinc-700 group-hover:text-primary transition-colors">Flat Colors (+${(currentStyle.addons as any).flatColors})</span>
                   </label>
                   <label className="flex items-center gap-3 cursor-pointer group">
                     <div className={`w-6 h-6 border-[3px] border-zinc-800 rounded flex items-center justify-center transition-colors ${simpleShading ? 'bg-primary' : 'bg-white'}`}>
                       {simpleShading && <span className="material-symbols-outlined text-white text-sm font-bold">check</span>}
                     </div>
                     <input type="checkbox" className="hidden" checked={simpleShading} onChange={(e) => setSimpleShading(e.target.checked)} />
-                    <span className="font-label-bold text-zinc-700 group-hover:text-primary transition-colors">Simple Shading (+${currentStyle.addons.simpleShading})</span>
+                    <span className="font-label-bold text-zinc-700 group-hover:text-primary transition-colors">Simple Shading (+${(currentStyle.addons as any).simpleShading})</span>
                   </label>
                 </div>
               </div>
