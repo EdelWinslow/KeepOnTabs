@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 const links = [
+  { href: "/", label: "Home" },
   { href: "/gallery", label: "Portfolio" },
   { href: "/pricing", label: "Pricing" },
   { href: "/tos", label: "TOS" },
