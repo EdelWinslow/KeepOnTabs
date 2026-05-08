@@ -124,11 +124,11 @@ export default function Gallery() {
       </FadeIn>
 
       <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter">
-        {filteredWorks.map((work) => (
+        {filteredWorks.map((work, index) => (
           <FadeIn
             key={work.id}
             delay={work.delay}
-            className={`${work.span} bg-white border-[3px] border-zinc-800 p-4 hard-shadow group flex flex-col`}
+            className={`${work.span} ${index >= 4 ? "hidden md:flex" : "flex"} bg-white border-[3px] border-zinc-800 p-4 hard-shadow group flex-col`}
           >
             <div
               className={`overflow-hidden border-2 border-zinc-800 mb-4 ${work.height}`}
