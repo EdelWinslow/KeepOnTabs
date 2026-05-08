@@ -7,22 +7,22 @@ export default function Home() {
     <main className="max-w-container-max mx-auto px-8 py-16 w-full grow">
       <FadeIn>
         <section className="flex flex-col md:flex-row items-center gap-12 mb-24 mt-8">
-          <div className="flex-1 space-y-8">
-            <div className="inline-block bg-primary-container border-4 border-zinc-800 px-6 py-2 -rotate-2 shadow-[4px_4px_0px_0px_rgba(43,47,52,1)]">
-              <span className="font-headline-md text-zinc-800 uppercase tracking-widest">
+          <div className="flex-1 space-y-8 w-full">
+            <div className="inline-block bg-primary-container border-[3px] border-zinc-800 px-5 py-3 -rotate-2 shadow-[4px_4px_0px_0px_rgba(43,47,52,1)] mb-4 mt-4">
+              <span className="font-headline-lg text-zinc-900 font-black uppercase tracking-wider text-xl md:text-2xl">
                 Commissions Open!
               </span>
             </div>
-            <h1 className="font-headline-xl text-on-background">
-              Your imagination, <br />
-              <span className="text-primary-container drop-shadow-[2px_2px_0px_#2B2F34]">
+            <h1 className="font-headline-xl text-zinc-900 leading-tight">
+              Your imagination, <br className="hidden md:block" />
+              <span className="bg-primary text-white px-3 py-1 border-[3px] border-zinc-900 shadow-[4px_4px_0px_0px_rgba(43,47,52,1)] inline-block -rotate-2 my-2 mr-2">
                 hand-inked
-              </span>{" "}
+              </span>
               with joy.
             </h1>
-            <p className="text-body-lg text-secondary max-w-lg">
+            <p className="text-body-lg text-zinc-700 max-w-lg font-medium">
               Bringing your characters and ideas to life with a professional touch
-              and a best-friend vibe. Let&apos;s create something amazing together.
+              and a best-friend vibe. Let's create something amazing together.
             </p>
             <div className="flex flex-wrap gap-4 pt-4">
               <Link href="/pricing">
@@ -37,11 +37,11 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <div className="flex-1 relative">
-            <div className="absolute -inset-4 bg-secondary-container border-4 border-zinc-800 rounded-2xl rotate-3 -z-10"></div>
-            <div className="bg-white border-4 border-zinc-800 p-4 rounded-2xl shadow-[12px_12px_0px_0px_rgba(43,47,52,1)]">
-              <div className="w-full aspect-[4/3] rounded-lg border-2 border-zinc-800 bg-[#E5E7EB] flex items-center justify-center text-zinc-500 font-bold font-headline-md">
-                Hero Image
+          <div className="flex-1 relative w-full max-w-[85vw] mx-auto md:max-w-none mt-10 md:mt-0">
+            <div className="absolute -inset-2 md:-inset-4 bg-secondary-container border-[3px] border-zinc-800 rounded-2xl rotate-3 -z-10"></div>
+            <div className="bg-white border-[3px] border-zinc-800 p-2 md:p-4 rounded-2xl shadow-[8px_8px_0px_0px_rgba(43,47,52,1)] md:shadow-[12px_12px_0px_0px_rgba(43,47,52,1)]">
+              <div className="w-full aspect-[4/3] rounded-lg border-2 border-zinc-800 bg-[#E5E7EB] flex items-center justify-center text-zinc-500 font-bold font-headline-md overflow-hidden">
+                <span className="p-4 text-center">Hero Image</span>
               </div>
             </div>
           </div>
