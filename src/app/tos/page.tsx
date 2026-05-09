@@ -9,7 +9,7 @@ export default function TOS() {
             Working with Tabitha
           </div>
           <h1 className="font-headline-xl text-headline-xl text-zinc-800">
-            Terms of Service &amp; Contact
+            Terms of Service
           </h1>
           <p className="font-body-lg text-body-lg text-zinc-600 max-w-2xl mx-auto">
             Everything you need to know about starting a project together. I keep

@@ -146,9 +146,6 @@ export default function Gallery() {
                   {work.title}
                 </h3>
               </div>
-              <span className="material-symbols-outlined text-zinc-800 text-3xl">
-                arrow_outward
-              </span>
             </div>
           </FadeIn>
         ))}
