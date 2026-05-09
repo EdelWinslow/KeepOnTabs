@@ -93,15 +93,15 @@ body {
 }
 
 .hard-shadow {
-  box-shadow: 4px 4px 0px 0px #2b2f34, 8px 8px 0px 0px #ffb3d9;
+  box-shadow: 4px 4px 0px 0px #2b2f34;
 }
 .hard-shadow-hover:hover {
   transform: translate(2px, 2px);
-  box-shadow: 2px 2px 0px 0px #2b2f34, 6px 6px 0px 0px #ffb3d9;
+  box-shadow: 2px 2px 0px 0px #2b2f34;
 }
 .hard-shadow-active:active {
   transform: translate(4px, 4px);
-  box-shadow: 0px 0px 0px 0px #2b2f34, 4px 4px 0px 0px #ffb3d9;
+  box-shadow: 0px 0px 0px 0px #2b2f34;
 }
 .brutal-shadow {
   box-shadow: 4px 4px 0px 0px #2b2f34;
