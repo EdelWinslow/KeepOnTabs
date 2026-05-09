@@ -1,6 +1,7 @@
 import FadeIn from "@/components/FadeIn";
 import Link from "next/link";
 import Image from "next/image";
+import HeroCarousel from "@/components/HeroCarousel";
 
 export default function Home() {
   return (
@@ -40,9 +41,7 @@ export default function Home() {
           <div className="flex-1 relative w-full max-w-[85vw] mx-auto md:max-w-none mt-10 md:mt-0">
             <div className="absolute -inset-2 md:-inset-4 bg-secondary-container border-[3px] border-zinc-800 rounded-2xl rotate-3 -z-10"></div>
             <div className="bg-white border-[3px] border-zinc-800 p-2 md:p-4 rounded-2xl shadow-[8px_8px_0px_0px_rgba(43,47,52,1)] md:shadow-[12px_12px_0px_0px_rgba(43,47,52,1)]">
-              <div className="w-full aspect-[4/3] rounded-lg border-2 border-zinc-800 bg-[#E5E7EB] flex items-center justify-center text-zinc-500 font-bold font-headline-md overflow-hidden">
-                <span className="p-4 text-center">Hero Image</span>
-              </div>
+              <HeroCarousel />
             </div>
           </div>
         </section>
