@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 body {
-  background-image: radial-gradient(#a4c8ff 2px, transparent 2px);
+  background-image: radial-gradient(circle, rgba(164, 200, 255, 0.5) 1.5px, transparent 2px);
   background-size: 24px 24px;
 }
 
