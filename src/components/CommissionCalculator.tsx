@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePopSounds } from "@/hooks/usePopSounds";
 
 type StyleType = "sketch" | "lineart" | "render";
 type BodyType = "headshot" | "bust" | "half" | "full";
@@ -60,6 +61,7 @@ export default function CommissionCalculator() {
   
   const [background, setBackground] = useState<BgType>("none");
   const [extraCharacters, setExtraCharacters] = useState(0);
+  const { playRandomPop } = usePopSounds();
 
   const handleStyleChange = (newStyle: StyleType) => {
     setStyle(newStyle);
@@ -108,7 +110,7 @@ export default function CommissionCalculator() {
               {(Object.keys(PRICING) as StyleType[]).map((key) => (
                 <button
                   key={key}
-                  onClick={() => handleStyleChange(key)}
+                  onClick={() => { playRandomPop(); handleStyleChange(key); }}
                   className={`py-3 px-4 rounded-lg border-[3px] border-zinc-800 font-label-bold transition-all text-center ${
                     style === key 
                       ? "bg-primary-container text-zinc-900 hard-shadow transform -translate-y-1" 
@@ -128,7 +130,7 @@ export default function CommissionCalculator() {
               {(Object.keys(currentStyle.types) as BodyType[]).map((key) => (
                 <button
                   key={key}
-                  onClick={() => setType(key)}
+                  onClick={() => { playRandomPop(); setType(key); }}
                   className={`py-3 px-2 rounded-lg border-[3px] border-zinc-800 font-label-bold transition-all text-center text-sm ${
                     type === key 
                       ? "bg-primary-container text-zinc-900 hard-shadow transform -translate-y-1" 
@@ -151,14 +153,14 @@ export default function CommissionCalculator() {
                     <div className={`w-6 h-6 border-[3px] border-zinc-800 rounded flex items-center justify-center transition-colors ${flatColors ? 'bg-primary' : 'bg-white'}`}>
                       {flatColors && <span className="material-symbols-outlined text-white text-sm font-bold">check</span>}
                     </div>
-                    <input type="checkbox" className="hidden" checked={flatColors} onChange={(e) => setFlatColors(e.target.checked)} />
+                    <input type="checkbox" className="hidden" checked={flatColors} onChange={(e) => { playRandomPop(); setFlatColors(e.target.checked); }} />
                     <span className="font-label-bold text-zinc-700 group-hover:text-primary transition-colors">Flat Colors (+${(currentStyle.addons as any).flatColors})</span>
                   </label>
                   <label className="flex items-center gap-3 cursor-pointer group">
                     <div className={`w-6 h-6 border-[3px] border-zinc-800 rounded flex items-center justify-center transition-colors ${simpleShading ? 'bg-primary' : 'bg-white'}`}>
                       {simpleShading && <span className="material-symbols-outlined text-white text-sm font-bold">check</span>}
                     </div>
-                    <input type="checkbox" className="hidden" checked={simpleShading} onChange={(e) => setSimpleShading(e.target.checked)} />
+                    <input type="checkbox" className="hidden" checked={simpleShading} onChange={(e) => { playRandomPop(); setSimpleShading(e.target.checked); }} />
                     <span className="font-label-bold text-zinc-700 group-hover:text-primary transition-colors">Simple Shading (+${(currentStyle.addons as any).simpleShading})</span>
                   </label>
                 </div>
@@ -173,7 +175,7 @@ export default function CommissionCalculator() {
                      <div className={`w-6 h-6 rounded-full border-[3px] border-zinc-800 flex items-center justify-center transition-colors ${background === key ? 'bg-primary' : 'bg-white'}`}>
                        {background === key && <div className="w-2 h-2 rounded-full bg-white"></div>}
                      </div>
-                     <input type="radio" name="bg" className="hidden" checked={background === key} onChange={() => setBackground(key)} />
+                     <input type="radio" name="bg" className="hidden" checked={background === key} onChange={() => { playRandomPop(); setBackground(key); }} />
                      <span className="font-label-bold text-zinc-700 group-hover:text-primary transition-colors">
                        {BACKGROUNDS[key].name} {BACKGROUNDS[key].price > 0 && `(+$${BACKGROUNDS[key].price})`}
                      </span>
@@ -188,7 +190,7 @@ export default function CommissionCalculator() {
             <label className="block font-label-bold text-zinc-700 mb-3 uppercase tracking-wider">Extra Characters (+60% Base Price/ea)</label>
             <div className="flex items-center gap-4">
               <button 
-                onClick={() => setExtraCharacters(Math.max(0, extraCharacters - 1))}
+                onClick={() => { playRandomPop(); setExtraCharacters(Math.max(0, extraCharacters - 1)); }}
                 className="w-12 h-12 rounded-lg border-[3px] border-zinc-800 flex items-center justify-center bg-white hover:bg-zinc-50 hard-shadow-active transition-all"
               >
                 <span className="material-symbols-outlined font-bold text-zinc-700">remove</span>
@@ -197,7 +199,7 @@ export default function CommissionCalculator() {
                 {extraCharacters}
               </div>
               <button 
-                onClick={() => setExtraCharacters(Math.min(10, extraCharacters + 1))}
+                onClick={() => { playRandomPop(); setExtraCharacters(Math.min(10, extraCharacters + 1)); }}
                 className="w-12 h-12 rounded-lg border-[3px] border-zinc-800 flex items-center justify-center bg-white hover:bg-zinc-50 hard-shadow-active transition-all"
               >
                 <span className="material-symbols-outlined font-bold text-zinc-700">add</span>

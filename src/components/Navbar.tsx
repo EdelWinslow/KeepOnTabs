@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { usePopSounds } from "@/hooks/usePopSounds";
 
 const links = [
   { href: "/", label: "Home" },
@@ -16,6 +17,7 @@ const links = [
 export default function Navbar() {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { playRandomPop } = usePopSounds();
 
   return (
     <header className="w-full border-b-4 border-zinc-800 sticky top-0 z-50 bg-white shadow-[4px_4px_0px_0px_rgba(43,47,52,1)]">
@@ -28,8 +30,11 @@ export default function Navbar() {
         </Link>
         
         <button 
-          className="md:hidden flex items-center justify-center p-2 border-[3px] border-zinc-800 rounded-md bg-white hard-shadow-sm active-press z-20 relative"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          className="md:hidden flex items-center justify-center p-2 border-[3px] border-zinc-800 rounded-md bg-white hard-shadow-sm active-press z-20 relative cursor-pointer"
+          onClick={() => {
+            playRandomPop();
+            setIsMobileMenuOpen(!isMobileMenuOpen);
+          }}
           aria-label="Toggle mobile menu"
         >
           <span className="material-symbols-outlined font-bold text-zinc-800">
@@ -43,6 +48,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
+                onClick={playRandomPop}
                 className={`relative pb-1 transition-colors hover:translate-x-[2px] hover:translate-y-[2px] ${
                   isActive
                     ? "text-zinc-900"
@@ -62,8 +68,10 @@ export default function Navbar() {
           })}
         </nav>
           <div className="hidden md:block">
-            <Link href="/contact">
-              <button className="bg-primary-container text-zinc-900 px-6 py-2 border-4 border-zinc-800 hard-shadow-md font-bold uppercase tracking-tighter active-press transition-all cursor-pointer">
+            <Link href="/contact" onClick={playRandomPop}>
+              <button 
+                className="bg-primary-container text-zinc-900 px-6 py-2 border-4 border-zinc-800 hard-shadow-md font-bold uppercase tracking-tighter active-press transition-all cursor-pointer"
+              >
                 Hire Me
               </button>
             </Link>
@@ -78,7 +86,10 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={() => {
+                    playRandomPop();
+                    setIsMobileMenuOpen(false);
+                  }}
                   className={`font-headline-md font-bold text-2xl uppercase tracking-tight border-b-2 border-zinc-100 pb-2 ${
                     isActive ? "text-primary" : "text-zinc-800"
                   }`}
@@ -87,7 +98,10 @@ export default function Navbar() {
                 </Link>
               );
             })}
-            <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>
+            <Link href="/contact" onClick={() => {
+              playRandomPop();
+              setIsMobileMenuOpen(false);
+            }}>
               <button className="w-full bg-primary-container text-zinc-900 px-6 py-4 border-[3px] border-zinc-800 hard-shadow font-bold text-xl uppercase tracking-tighter active-press transition-all cursor-pointer mt-4">
                 Hire Me
               </button>

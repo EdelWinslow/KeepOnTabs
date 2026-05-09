@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { usePopSounds } from "@/hooks/usePopSounds";
 
 const SLIDES = [
   { id: 0, content: "Recent Commission 1", bg: "bg-[#E5E7EB]" },
@@ -29,8 +30,10 @@ const variants = {
 export default function HeroCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(1);
+  const { playRandomPop } = usePopSounds();
 
   const paginate = (newDirection: number) => {
+    playRandomPop();
     setDirection(newDirection);
     setCurrentIndex((prev) => {
       let nextIndex = prev + newDirection;
@@ -83,6 +86,7 @@ export default function HeroCarousel() {
             key={idx}
             onClick={() => {
               if (idx !== currentIndex) {
+                playRandomPop();
                 setDirection(idx > currentIndex ? 1 : -1);
                 setCurrentIndex(idx);
               }

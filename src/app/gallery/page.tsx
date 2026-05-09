@@ -3,6 +3,7 @@
 import FadeIn from "@/components/FadeIn";
 import Link from "next/link";
 import { useState } from "react";
+import { usePopSounds } from "@/hooks/usePopSounds";
 
 const CATEGORIES = ["All Works", "Characters", "Illustrations", "Sketches"];
 
@@ -83,6 +84,7 @@ const WORKS = [
 
 export default function Gallery() {
   const [activeCategory, setActiveCategory] = useState("All Works");
+  const { playRandomPop } = usePopSounds();
 
   const filteredWorks =
     activeCategory === "All Works"
@@ -108,7 +110,10 @@ export default function Gallery() {
           {CATEGORIES.map((category) => (
             <button
               key={category}
-              onClick={() => setActiveCategory(category)}
+              onClick={() => {
+                playRandomPop();
+                setActiveCategory(category);
+              }}
               className={`${
                 activeCategory === category
                   ? "bg-primary-container text-on-primary-container"
@@ -164,7 +169,7 @@ export default function Gallery() {
               something amazing together.
             </p>
           </div>
-          <Link href="/contact">
+          <Link href="/contact" onClick={playRandomPop}>
             <button className="bg-white text-zinc-800 font-headline-md text-headline-md px-10 py-5 border-[3px] border-zinc-800 hard-shadow hover:translate-x-[2px] hover:translate-y-[2px] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all whitespace-nowrap cursor-pointer">
               Start a Project
             </button>

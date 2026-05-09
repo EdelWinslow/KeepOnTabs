@@ -3,9 +3,11 @@
 import FadeIn from "@/components/FadeIn";
 import { useState } from "react";
 import Link from "next/link";
+import { usePopSounds } from "@/hooks/usePopSounds";
 
 export default function Contact() {
   const [agreedToTos, setAgreedToTos] = useState(false);
+  const { playRandomPop } = usePopSounds();
   return (
     <div className="max-w-container-max mx-auto px-8 py-16 w-full flex-grow">
       <FadeIn>
@@ -45,7 +47,7 @@ export default function Contact() {
                   <div className={`w-6 h-6 border-[3px] border-zinc-800 rounded flex items-center justify-center transition-colors ${agreedToTos ? 'bg-primary' : 'bg-white'}`}>
                      {agreedToTos && <span className="material-symbols-outlined text-white text-sm font-bold">check</span>}
                   </div>
-                  <input type="checkbox" className="hidden" checked={agreedToTos} onChange={(e) => setAgreedToTos(e.target.checked)} />
+                  <input type="checkbox" className="hidden" checked={agreedToTos} onChange={(e) => { playRandomPop(); setAgreedToTos(e.target.checked); }} />
                   <span className="font-label-bold text-zinc-800 select-none text-left">I agree to the Terms of Service</span>
                 </label>
               </div>
@@ -87,6 +89,7 @@ export default function Contact() {
               <button
                 className="w-full md:w-auto px-10 py-4 bg-primary-container border-[3px] border-zinc-800 font-bold text-lg hard-shadow-md active-press transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
                 type="button"
+                onClick={playRandomPop}
                 disabled={!agreedToTos}
               >
                 Shoot over the details
@@ -107,6 +110,7 @@ export default function Contact() {
                 href="https://discord.gg/BsP7Buc3"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={playRandomPop}
               >
                 <span className="material-symbols-outlined text-primary text-[32px]" style={{ fontVariationSettings: '"FILL" 1' }}>
                   diversity_3
@@ -125,6 +129,7 @@ export default function Contact() {
                 href="https://www.instagram.com/keep0ntabs?igsh=dGxubWFxMWZjYnN6"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={playRandomPop}
               >
                 <span className="material-symbols-outlined text-primary text-[32px]" style={{ fontVariationSettings: '"FILL" 1' }}>
                   camera
@@ -143,6 +148,7 @@ export default function Contact() {
                 href="https://www.tiktok.com/@keep0ntabs?_r=1&_t=ZS-95yPiJkVOi4"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={playRandomPop}
               >
                 <span className="material-symbols-outlined text-primary text-[32px]" style={{ fontVariationSettings: '"FILL" 1' }}>
                   video_library
@@ -198,7 +204,7 @@ export default function Contact() {
               Check out my Frequently Asked Questions before you send an inquiry!
             </p>
           </div>
-          <button className="px-8 py-4 bg-white text-zinc-900 font-bold border-[3px] border-white hard-shadow-sm active-press hover:bg-primary-container transition-all cursor-pointer">
+          <button className="px-8 py-4 bg-white text-zinc-900 font-bold border-[3px] border-white hard-shadow-sm active-press hover:bg-primary-container transition-all cursor-pointer" onClick={playRandomPop}>
             Read the FAQ
           </button>
         </section>

@@ -2,9 +2,13 @@
 
 import FadeIn from "@/components/FadeIn";
 import CommissionCalculator from "@/components/CommissionCalculator";
+import { usePopSounds } from "@/hooks/usePopSounds";
 
 export default function Pricing() {
+  const { playRandomPop } = usePopSounds();
+
   const handleSelectStyle = (style: string) => {
+    playRandomPop();
     window.dispatchEvent(new CustomEvent("setStyle", { detail: style }));
     document.getElementById("calculator")?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
