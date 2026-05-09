@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+body {
+  background-image: radial-gradient(#a4c8ff 2px, transparent 2px);
+  background-size: 24px 24px;
+}
+
 @theme {
   --color-primary-fixed-dim: #a4c8ff;
   --color-surface-tint: #2760a0;
@@ -54,9 +59,9 @@
   --spacing-gutter: 24px;
   --spacing-container-max: 1280px;
 
-  --font-headline-xl: "Plus Jakarta Sans", sans-serif;
-  --font-headline-lg: "Plus Jakarta Sans", sans-serif;
-  --font-headline-md: "Plus Jakarta Sans", sans-serif;
+  --font-headline-xl: "Fredoka", sans-serif;
+  --font-headline-lg: "Fredoka", sans-serif;
+  --font-headline-md: "Fredoka", sans-serif;
   --font-body-lg: "Be Vietnam Pro", sans-serif;
   --font-body-md: "Be Vietnam Pro", sans-serif;
   --font-label-bold: "Lexend", sans-serif;
@@ -88,15 +93,15 @@
 }
 
 .hard-shadow {
-  box-shadow: 4px 4px 0px 0px #2b2f34;
+  box-shadow: 4px 4px 0px 0px #2b2f34, 8px 8px 0px 0px #ffb3d9;
 }
 .hard-shadow-hover:hover {
   transform: translate(2px, 2px);
-  box-shadow: 2px 2px 0px 0px #2b2f34;
+  box-shadow: 2px 2px 0px 0px #2b2f34, 6px 6px 0px 0px #ffb3d9;
 }
 .hard-shadow-active:active {
   transform: translate(4px, 4px);
-  box-shadow: 0px 0px 0px 0px #2b2f34;
+  box-shadow: 0px 0px 0px 0px #2b2f34, 4px 4px 0px 0px #ffb3d9;
 }
 .brutal-shadow {
   box-shadow: 4px 4px 0px 0px #2b2f34;

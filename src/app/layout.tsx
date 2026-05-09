@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Be_Vietnam_Pro, Lexend } from "next/font/google";
+import { Fredoka, Be_Vietnam_Pro, Lexend } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const plusJakartaSans = Plus_Jakarta_Sans({
+const fredoka = Fredoka({
   variable: "--font-plus-jakarta-sans",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["400", "500", "600", "700"],
 });
 
 const beVietnamPro = Be_Vietnam_Pro({
@@ -41,7 +41,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${plusJakartaSans.variable} ${beVietnamPro.variable} ${lexend.variable} antialiased bg-[#D7ECFF] text-on-background font-body-md min-h-screen flex flex-col overflow-x-hidden`}
+        className={`${fredoka.variable} ${beVietnamPro.variable} ${lexend.variable} antialiased bg-[#D7ECFF] text-on-background font-body-md min-h-screen flex flex-col overflow-x-hidden`}
       >
         <Navbar />
         {children}
