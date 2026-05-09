@@ -23,8 +23,8 @@ const lexend = Lexend({
 });
 
 export const metadata: Metadata = {
-  title: "ArtStationary | Commission Portfolio",
-  description: "Portfolio and commission website for ArtStationary.",
+  title: "keep0ntabs | Commission Portfolio",
+  description: "Portfolio and commission website for keep0ntabs.",
 };
 
 export default function RootLayout({

@@ -24,7 +24,7 @@ export default function Navbar() {
           href="/"
           className="text-2xl font-black text-zinc-800 italic font-headline-xl z-20 relative"
         >
-          ArtStationary
+          keep0ntabs
         </Link>
         
         <button 

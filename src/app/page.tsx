@@ -32,7 +32,7 @@ export default function Home() {
               </Link>
               <Link href="/gallery">
                 <button className="bg-white text-zinc-800 border-4 border-zinc-800 px-8 py-4 font-headline-md rounded-xl shadow-[6px_6px_0px_0px_rgba(43,47,52,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none active:translate-x-[4px] active:translate-y-[4px] transition-all cursor-pointer">
-                  Portfolio
+                  Gallery
                 </button>
               </Link>
             </div>
