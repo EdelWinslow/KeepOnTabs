@@ -4,6 +4,9 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
+import SoundToggle from "@/components/SoundToggle";
+import PageTransition from "@/components/PageTransition";
+import { SoundProvider } from "@/context/SoundContext";
 
 const fredoka = Fredoka({
   variable: "--font-plus-jakarta-sans",
@@ -25,7 +28,27 @@ const lexend = Lexend({
 
 export const metadata: Metadata = {
   title: "keep0ntabs | Commission Gallery",
-  description: "Gallery and commission website for keep0ntabs.",
+  description:
+    "Hand-inked commissions with joy — OCs, fanarts, character designs & more. Currently open for commissions!",
+  metadataBase: new URL("https://edelwinslow.github.io/KeepOnTabs"),
+  openGraph: {
+    title: "keep0ntabs | Commission Gallery",
+    description:
+      "Hand-inked commissions with joy — OCs, fanarts, character designs & more. Currently open for commissions!",
+    url: "https://edelwinslow.github.io/KeepOnTabs",
+    siteName: "keep0ntabs",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "keep0ntabs | Commission Gallery",
+    description:
+      "Hand-inked commissions with joy — OCs, fanarts, character designs & more.",
+  },
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
@@ -44,10 +67,13 @@ export default function RootLayout({
       <body
         className={`${fredoka.variable} ${beVietnamPro.variable} ${lexend.variable} antialiased bg-[#D7ECFF] text-on-background font-body-md min-h-screen flex flex-col overflow-x-hidden`}
       >
-        <Navbar />
-        {children}
-        <Footer />
-        <BackToTop />
+        <SoundProvider>
+          <Navbar />
+          <PageTransition>{children}</PageTransition>
+          <Footer />
+          <BackToTop />
+          <SoundToggle />
+        </SoundProvider>
       </body>
     </html>
   );

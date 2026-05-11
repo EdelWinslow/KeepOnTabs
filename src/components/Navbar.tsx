@@ -23,12 +23,18 @@ export default function Navbar() {
   return (
     <header className="w-full border-b-4 border-zinc-800 sticky top-0 z-50 bg-white shadow-[4px_4px_0px_0px_rgba(43,47,52,1)]">
       <div className="flex justify-between items-center h-20 px-8 w-full max-w-full mx-auto">
-        <Link
-          href="/"
-          className="text-2xl font-black text-zinc-800 italic font-headline-xl z-20 relative"
-        >
-          keep0ntabs
-        </Link>
+        <div className="flex items-center gap-3 z-20 relative">
+          <Link
+            href="/"
+            className="text-2xl font-black text-zinc-800 italic font-headline-xl"
+          >
+            keep0ntabs
+          </Link>
+          <div className="hidden sm:flex items-center gap-1.5 bg-green-200 border-[2px] border-zinc-800 px-3 py-1 rounded-full">
+            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+            <span className="text-xs font-label-bold uppercase text-zinc-800">Open</span>
+          </div>
+        </div>
         
         <button 
           className="md:hidden flex items-center justify-center p-2 border-[3px] border-zinc-800 rounded-md bg-white hard-shadow-sm active-press z-20 relative cursor-pointer"

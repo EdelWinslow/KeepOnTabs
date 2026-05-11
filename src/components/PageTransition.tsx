@@ -1,16 +1,18 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { usePathname } from "next/navigation";
 import { ReactNode } from "react";
 
 export default function PageTransition({ children }: { children: ReactNode }) {
+  const pathname = usePathname();
+
   return (
     <motion.div
-      initial={{ opacity: 0, y: 15 }}
+      key={pathname}
+      initial={{ opacity: 0, y: 16 }}
       animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -15 }}
-      transition={{ duration: 0.3, ease: "easeOut" }}
-      className="w-full flex-grow flex flex-col"
+      transition={{ duration: 0.35, ease: "easeOut" }}
     >
       {children}
     </motion.div>
