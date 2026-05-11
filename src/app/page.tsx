@@ -176,6 +176,80 @@ export default function Home() {
       <FadeIn delay={0.2}>
         <section className="mb-24">
           <div className="text-center mb-12">
+            <h2 className="font-headline-lg text-zinc-800 mb-4">How It Works</h2>
+            <div className="h-1.5 w-32 bg-primary-container mx-auto border-2 border-zinc-800 rounded-full"></div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            {/* Step 1 */}
+            <div className="relative bg-white border-[3px] border-zinc-800 p-6 rounded-2xl shadow-[6px_6px_0px_0px_rgba(43,47,52,1)] text-center">
+              <div className="absolute -top-5 left-1/2 -translate-x-1/2 w-10 h-10 bg-primary-container border-[3px] border-zinc-800 rounded-full flex items-center justify-center font-headline-md text-zinc-800">
+                1
+              </div>
+              <div className="mt-4 mb-4">
+                <span className="material-symbols-outlined text-primary text-4xl" style={{ fontVariationSettings: '"FILL" 1' }}>
+                  chat
+                </span>
+              </div>
+              <h3 className="font-headline-md text-zinc-800 mb-2">Send an Inquiry</h3>
+              <p className="font-body-md text-zinc-600 text-sm">
+                Fill out the contact form or DM me on Discord with your idea, references, and preferred style.
+              </p>
+            </div>
+
+            {/* Step 2 */}
+            <div className="relative bg-white border-[3px] border-zinc-800 p-6 rounded-2xl shadow-[6px_6px_0px_0px_rgba(43,47,52,1)] text-center">
+              <div className="absolute -top-5 left-1/2 -translate-x-1/2 w-10 h-10 bg-primary-container border-[3px] border-zinc-800 rounded-full flex items-center justify-center font-headline-md text-zinc-800">
+                2
+              </div>
+              <div className="mt-4 mb-4">
+                <span className="material-symbols-outlined text-primary text-4xl" style={{ fontVariationSettings: '"FILL" 1' }}>
+                  edit
+                </span>
+              </div>
+              <h3 className="font-headline-md text-zinc-800 mb-2">Sketch Approval</h3>
+              <p className="font-body-md text-zinc-600 text-sm">
+                I&apos;ll create a rough sketch for you to review. You get 2 free revisions at this stage!
+              </p>
+            </div>
+
+            {/* Step 3 */}
+            <div className="relative bg-white border-[3px] border-zinc-800 p-6 rounded-2xl shadow-[6px_6px_0px_0px_rgba(43,47,52,1)] text-center">
+              <div className="absolute -top-5 left-1/2 -translate-x-1/2 w-10 h-10 bg-primary-container border-[3px] border-zinc-800 rounded-full flex items-center justify-center font-headline-md text-zinc-800">
+                3
+              </div>
+              <div className="mt-4 mb-4">
+                <span className="material-symbols-outlined text-primary text-4xl" style={{ fontVariationSettings: '"FILL" 1' }}>
+                  payments
+                </span>
+              </div>
+              <h3 className="font-headline-md text-zinc-800 mb-2">Payment</h3>
+              <p className="font-body-md text-zinc-600 text-sm">
+                Once you approve the sketch, send payment via PayPal and I&apos;ll start on the final piece.
+              </p>
+            </div>
+
+            {/* Step 4 */}
+            <div className="relative bg-white border-[3px] border-zinc-800 p-6 rounded-2xl shadow-[6px_6px_0px_0px_rgba(43,47,52,1)] text-center">
+              <div className="absolute -top-5 left-1/2 -translate-x-1/2 w-10 h-10 bg-primary-container border-[3px] border-zinc-800 rounded-full flex items-center justify-center font-headline-md text-zinc-800">
+                4
+              </div>
+              <div className="mt-4 mb-4">
+                <span className="material-symbols-outlined text-primary text-4xl" style={{ fontVariationSettings: '"FILL" 1' }}>
+                  celebration
+                </span>
+              </div>
+              <h3 className="font-headline-md text-zinc-800 mb-2">Delivery!</h3>
+              <p className="font-body-md text-zinc-600 text-sm">
+                You&apos;ll receive your final high-res artwork. Time to show it off to the world!
+              </p>
+            </div>
+          </div>
+        </section>
+      </FadeIn>
+
+      <FadeIn delay={0.2}>
+        <section className="mb-24">
+          <div className="text-center mb-12">
             <h2 className="font-headline-lg text-zinc-800 mb-4">Latest Works</h2>
             <div className="h-1.5 w-32 bg-primary-container mx-auto border-2 border-zinc-800 rounded-full"></div>
           </div>

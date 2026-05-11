@@ -4,6 +4,7 @@ import FadeIn from "@/components/FadeIn";
 import Link from "next/link";
 import { useState } from "react";
 import { usePopSounds } from "@/hooks/usePopSounds";
+import Lightbox from "@/components/Lightbox";
 
 const CATEGORIES = ["All Works", "Characters", "Illustrations", "Sketches"];
 
@@ -85,6 +86,7 @@ const WORKS = [
 export default function Gallery() {
   const [activeCategory, setActiveCategory] = useState("All Works");
   const { playRandomPop } = usePopSounds();
+  const [selectedWork, setSelectedWork] = useState<typeof WORKS[0] | null>(null);
 
   const filteredWorks =
     activeCategory === "All Works"
@@ -133,10 +135,14 @@ export default function Gallery() {
           <FadeIn
             key={work.id}
             delay={work.delay}
-            className={`${work.span} ${index >= 4 ? "hidden md:flex" : "flex"} bg-white border-[3px] border-zinc-800 p-4 hard-shadow group flex-col`}
+            className={`${work.span} ${index >= 4 ? "hidden md:flex" : "flex"} bg-white border-[3px] border-zinc-800 p-4 hard-shadow group flex-col cursor-pointer`}
           >
             <div
               className={`overflow-hidden border-2 border-zinc-800 mb-4 ${work.height}`}
+              onClick={() => {
+                playRandomPop();
+                setSelectedWork(work);
+              }}
             >
               <div className="w-full h-full bg-[#E5E7EB] flex items-center justify-center text-zinc-600 font-bold uppercase tracking-widest text-center px-4 transition-transform duration-500 group-hover:scale-105">
                 {work.imageText}
@@ -176,6 +182,16 @@ export default function Gallery() {
           </Link>
         </FadeIn>
       </div>
+
+      {/* Lightbox */}
+      <Lightbox
+        isOpen={!!selectedWork}
+        onClose={() => setSelectedWork(null)}
+        title={selectedWork?.title ?? ""}
+        category={selectedWork?.category ?? ""}
+        imageText={selectedWork?.imageText ?? ""}
+      />
     </div>
   );
 }
+

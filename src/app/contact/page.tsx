@@ -204,9 +204,11 @@ export default function Contact() {
               Check out my Frequently Asked Questions before you send an inquiry!
             </p>
           </div>
-          <button className="px-8 py-4 bg-white text-zinc-900 font-bold border-[3px] border-white hard-shadow-sm active-press hover:bg-primary-container transition-all cursor-pointer" onClick={playRandomPop}>
-            Read the FAQ
-          </button>
+          <Link href="/faq">
+            <button className="px-8 py-4 bg-white text-zinc-900 font-bold border-[3px] border-white hard-shadow-sm active-press hover:bg-primary-container transition-all cursor-pointer" onClick={playRandomPop}>
+              Read the FAQ
+            </button>
+          </Link>
         </section>
       </FadeIn>
     </div>

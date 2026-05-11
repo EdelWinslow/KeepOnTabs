@@ -3,6 +3,7 @@ import { Fredoka, Be_Vietnam_Pro, Lexend } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import BackToTop from "@/components/BackToTop";
 
 const fredoka = Fredoka({
   variable: "--font-plus-jakarta-sans",
@@ -46,6 +47,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+        <BackToTop />
       </body>
     </html>
   );
