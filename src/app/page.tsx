@@ -248,14 +248,14 @@ export default function Home() {
       </FadeIn>
 
       <FadeIn delay={0.2}>
-        <section className="mb-24">
+        <section className="mb-24" aria-labelledby="latest-works-title">
           <div className="text-center mb-12">
-            <h2 className="font-headline-lg text-zinc-800 mb-4">Latest Works</h2>
+            <h2 id="latest-works-title" className="font-headline-lg text-zinc-800 mb-4">Latest Works</h2>
             <div className="h-1.5 w-32 bg-primary-container mx-auto border-2 border-zinc-800 rounded-full"></div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white border-4 border-zinc-800 p-4 rounded-2xl shadow-[6px_6px_0px_0px_rgba(43,47,52,1)] hover:-translate-y-2 transition-all">
-              <div className="w-full aspect-square object-cover rounded-lg border-2 border-zinc-800 mb-4 bg-[#E5E7EB] flex items-center justify-center text-zinc-500 font-bold">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            <article className="bg-white border-4 border-zinc-800 p-4 rounded-2xl shadow-[6px_6px_0px_0px_rgba(43,47,52,1)] hover:-translate-y-2 transition-all">
+              <div className="w-full aspect-square object-cover rounded-lg border-2 border-zinc-800 mb-4 bg-[#E5E7EB] flex items-center justify-center text-zinc-500 font-bold" aria-label="Placeholder for Gallery Item 1">
                 Gallery Item 1
               </div>
               <div className="flex justify-between items-center px-2">
@@ -264,9 +264,9 @@ export default function Home() {
                   $45+
                 </span>
               </div>
-            </div>
-            <div className="bg-white border-4 border-zinc-800 p-4 rounded-2xl shadow-[6px_6px_0px_0px_rgba(43,47,52,1)] hover:-translate-y-2 transition-all">
-              <div className="w-full aspect-square object-cover rounded-lg border-2 border-zinc-800 mb-4 bg-[#E5E7EB] flex items-center justify-center text-zinc-500 font-bold">
+            </article>
+            <article className="bg-white border-4 border-zinc-800 p-4 rounded-2xl shadow-[6px_6px_0px_0px_rgba(43,47,52,1)] hover:-translate-y-2 transition-all">
+              <div className="w-full aspect-square object-cover rounded-lg border-2 border-zinc-800 mb-4 bg-[#E5E7EB] flex items-center justify-center text-zinc-500 font-bold" aria-label="Placeholder for Gallery Item 2">
                 Gallery Item 2
               </div>
               <div className="flex justify-between items-center px-2">
@@ -275,9 +275,9 @@ export default function Home() {
                   $70+
                 </span>
               </div>
-            </div>
-            <div className="bg-white border-4 border-zinc-800 p-4 rounded-2xl shadow-[6px_6px_0px_0px_rgba(43,47,52,1)] hover:-translate-y-2 transition-all">
-              <div className="w-full aspect-square object-cover rounded-lg border-2 border-zinc-800 mb-4 bg-[#E5E7EB] flex items-center justify-center text-zinc-500 font-bold">
+            </article>
+            <article className="bg-white border-4 border-zinc-800 p-4 rounded-2xl shadow-[6px_6px_0px_0px_rgba(43,47,52,1)] hover:-translate-y-2 transition-all sm:col-span-2 md:col-span-1">
+              <div className="w-full aspect-square object-cover rounded-lg border-2 border-zinc-800 mb-4 bg-[#E5E7EB] flex items-center justify-center text-zinc-500 font-bold" aria-label="Placeholder for Gallery Item 3">
                 Gallery Item 3
               </div>
               <div className="flex justify-between items-center px-2">
@@ -286,7 +286,7 @@ export default function Home() {
                   $55+
                 </span>
               </div>
-            </div>
+            </article>
           </div>
         </section>
       </FadeIn>

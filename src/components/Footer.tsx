@@ -23,6 +23,7 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={playRandomPop}
+            aria-label="Visit my Discord server"
           >
             Discord
           </a>
@@ -32,6 +33,7 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={playRandomPop}
+            aria-label="Follow me on Instagram"
           >
             Instagram
           </a>
@@ -41,6 +43,7 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={playRandomPop}
+            aria-label="Follow me on TikTok"
           >
             TikTok
           </a>
@@ -48,6 +51,7 @@ export default function Footer() {
             className="text-blue-500 font-bold font-headline-md text-sm hover:text-blue-400 transition-colors"
             href="#"
             onClick={playRandomPop}
+            aria-label="Donate or pay via PayPal"
           >
             PayPal
           </a>

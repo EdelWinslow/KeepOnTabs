@@ -4,7 +4,9 @@ import FadeIn from "@/components/FadeIn";
 import Link from "next/link";
 import { useState } from "react";
 import { usePopSounds } from "@/hooks/usePopSounds";
-import Lightbox from "@/components/Lightbox";
+import dynamic from "next/dynamic";
+
+const Lightbox = dynamic(() => import("@/components/Lightbox"), { ssr: false });
 
 const CATEGORIES = ["All Works", "Characters", "Illustrations", "Sketches"];
 
@@ -130,24 +132,25 @@ export default function Gallery() {
         </div>
       </FadeIn>
 
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-gutter">
         {filteredWorks.map((work, index) => (
           <FadeIn
             key={work.id}
             delay={work.delay}
             className={`${work.span} ${index >= 4 ? "hidden md:flex" : "flex"} bg-white border-[3px] border-zinc-800 p-4 hard-shadow group flex-col cursor-pointer`}
           >
-            <div
+            <article
               className={`overflow-hidden border-2 border-zinc-800 mb-4 ${work.height}`}
               onClick={() => {
                 playRandomPop();
                 setSelectedWork(work);
               }}
+              aria-label={`View detail for ${work.title}`}
             >
               <div className="w-full h-full bg-[#E5E7EB] flex items-center justify-center text-zinc-600 font-bold uppercase tracking-widest text-center px-4 transition-transform duration-500 group-hover:scale-105">
                 {work.imageText}
               </div>
-            </div>
+            </article>
             <div className="flex justify-between items-end mt-auto">
               <div>
                 <span className="bg-secondary-container text-on-secondary-container px-3 py-1 border border-zinc-800 text-xs font-bold uppercase mb-2 inline-block">

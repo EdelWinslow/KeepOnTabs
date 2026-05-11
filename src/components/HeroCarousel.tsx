@@ -67,12 +67,14 @@ export default function HeroCarousel() {
       <div className="absolute inset-0 flex items-center justify-between p-4 opacity-0 group-hover:opacity-100 transition-opacity z-10 pointer-events-none">
         <button 
           onClick={() => paginate(-1)}
+          aria-label="Previous slide"
           className="w-12 h-12 bg-white border-[3px] border-zinc-800 rounded-full flex items-center justify-center brutal-shadow hover:-translate-y-[2px] active:translate-y-[2px] active:shadow-none transition-all cursor-pointer pointer-events-auto"
         >
           <span className="material-symbols-outlined font-black text-zinc-800 text-xl">arrow_back</span>
         </button>
         <button 
           onClick={() => paginate(1)}
+          aria-label="Next slide"
           className="w-12 h-12 bg-white border-[3px] border-zinc-800 rounded-full flex items-center justify-center brutal-shadow hover:-translate-y-[2px] active:translate-y-[2px] active:shadow-none transition-all cursor-pointer pointer-events-auto"
         >
           <span className="material-symbols-outlined font-black text-zinc-800 text-xl">arrow_forward</span>
@@ -91,6 +93,8 @@ export default function HeroCarousel() {
                 setCurrentIndex(idx);
               }
             }}
+            aria-label={`Go to slide ${idx + 1}`}
+            aria-current={idx === currentIndex ? "true" : "false"}
             className={`w-3.5 h-3.5 rounded-full border-[2px] border-zinc-800 transition-colors cursor-pointer ${
               idx === currentIndex ? "bg-primary scale-110" : "bg-white hover:bg-zinc-200"
             }`}

@@ -1,8 +1,10 @@
 "use client";
 
 import FadeIn from "@/components/FadeIn";
-import CommissionCalculator from "@/components/CommissionCalculator";
+import dynamic from "next/dynamic";
 import { usePopSounds } from "@/hooks/usePopSounds";
+
+const CommissionCalculator = dynamic(() => import("@/components/CommissionCalculator"), { ssr: false });
 
 export default function Pricing() {
   const { playRandomPop } = usePopSounds();
