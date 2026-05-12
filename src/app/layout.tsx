@@ -4,7 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
-import SoundToggle from "@/components/SoundToggle";
+
 import PageTransition from "@/components/PageTransition";
 import { SoundProvider } from "@/context/SoundContext";
 
@@ -127,7 +127,7 @@ export default function RootLayout({
           <PageTransition>{children}</PageTransition>
           <Footer />
           <BackToTop />
-          <SoundToggle />
+
         </SoundProvider>
       </body>
     </html>
