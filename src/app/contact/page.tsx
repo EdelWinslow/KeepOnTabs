@@ -17,15 +17,23 @@ export default function Contact() {
     const formData = new FormData(e.currentTarget);
     const accessKey = "46322a54-ca79-49ee-9f7b-068d71505ad7";
     
-    formData.append("access_key", accessKey);
-    formData.append("subject", `New Commission Inquiry from ${formData.get("name")}`);
+    const object = Object.fromEntries(formData);
+    object.access_key = accessKey;
+    object.subject = `New Commission Inquiry from ${object.name}`;
+    
+    // Convert to JSON
+    const json = JSON.stringify(object);
 
     try {
       setStatus("submitting");
       const endpoint = "https://" + "api.web3forms.com" + "/submit";
       const res = await fetch(endpoint, {
         method: "POST",
-        body: formData,
+        headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json"
+        },
+        body: json,
       });
 
       const data = await res.json();
