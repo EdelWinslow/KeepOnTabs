@@ -1,13 +1,16 @@
 "use client";
 
 import FadeIn from "@/components/FadeIn";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Link from "next/link";
 import { usePopSounds } from "@/hooks/usePopSounds";
+import HCaptcha from "@hcaptcha/react-hcaptcha";
 
 export default function Contact() {
   const [agreedToTos, setAgreedToTos] = useState(false);
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+  const hcaptchaRef = useRef<HCaptcha>(null);
   const { playRandomPop } = usePopSounds();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -20,6 +23,11 @@ export default function Contact() {
     const object = Object.fromEntries(formData);
     object.access_key = accessKey;
     object.subject = `New Commission Inquiry from ${object.name}`;
+    
+    // Web3Forms hCaptcha integration
+    if (captchaToken) {
+      object["h-captcha-response"] = captchaToken;
+    }
     
     // Convert to JSON
     const json = JSON.stringify(object);
@@ -41,13 +49,17 @@ export default function Contact() {
       if (data.success) {
         setStatus("success");
         e.currentTarget.reset();
+        hcaptchaRef.current?.resetCaptcha();
+        setCaptchaToken(null);
       } else {
         setStatus("error");
-        console.error("Error submitting form", data);
+        console.error("Web3Forms API Error:", data);
+        alert(`Failed to send. Server responded with: ${data.message || JSON.stringify(data)}`);
       }
-    } catch (err) {
+    } catch (err: any) {
       setStatus("error");
-      console.error("Error submitting form", err);
+      console.error("Network or Fetch Error:", err);
+      alert(`Failed to send. Error: ${err.message || String(err)}\nIf you are using an adblocker (like Brave Shields or uBlock), it might be blocking the form submission!`);
     }
   };
 
@@ -162,10 +174,20 @@ export default function Contact() {
                 </div>
               )}
 
+              {/* hCaptcha Widget */}
+              <div className="flex justify-start">
+                <HCaptcha
+                  sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"
+                  onVerify={(token) => { setCaptchaToken(token); playRandomPop(); }}
+                  onExpire={() => setCaptchaToken(null)}
+                  ref={hcaptchaRef}
+                />
+              </div>
+
               <button
                 className="w-full md:w-auto px-10 py-4 bg-primary-container border-[3px] border-zinc-800 font-bold text-lg hard-shadow-md active-press transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
                 type="submit"
-                disabled={!agreedToTos || status === "submitting" || status === "success"}
+                disabled={!agreedToTos || status === "submitting" || status === "success" || !captchaToken}
               >
                 {status === "submitting" ? (
                   <>
