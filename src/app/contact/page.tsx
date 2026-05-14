@@ -7,7 +7,42 @@ import { usePopSounds } from "@/hooks/usePopSounds";
 
 export default function Contact() {
   const [agreedToTos, setAgreedToTos] = useState(false);
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const { playRandomPop } = usePopSounds();
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    playRandomPop();
+    
+    const formData = new FormData(e.currentTarget);
+    const accessKey = "46322a54-ca79-49ee-9f7b-068d71505ad7";
+    
+    formData.append("access_key", accessKey);
+    formData.append("subject", `New Commission Inquiry from ${formData.get("name")}`);
+
+    try {
+      setStatus("submitting");
+      const endpoint = "https://" + "api.web3forms.com" + "/submit";
+      const res = await fetch(endpoint, {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        setStatus("success");
+        e.currentTarget.reset();
+      } else {
+        setStatus("error");
+        console.error("Error submitting form", data);
+      }
+    } catch (err) {
+      setStatus("error");
+      console.error("Error submitting form", err);
+    }
+  };
+
   return (
     <div className="max-w-container-max mx-auto px-8 py-16 w-full flex-grow">
       <FadeIn>
@@ -53,47 +88,93 @@ export default function Contact() {
               </div>
             )}
             
-            <form className={`space-y-6 transition-all duration-300 ${!agreedToTos ? 'opacity-30 pointer-events-none grayscale' : ''}`}>
+            <form onSubmit={handleSubmit} className={`space-y-6 transition-all duration-300 ${!agreedToTos ? 'opacity-30 pointer-events-none grayscale' : ''}`}>
+              
+              {/* Spam Protection Honeypot */}
+              <div className="hidden absolute w-0 h-0 overflow-hidden">
+                <input type="checkbox" name="botcheck" tabIndex={-1} autoComplete="off" />
+              </div>
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="flex flex-col gap-2">
-                  <label className="font-label-bold text-label-bold uppercase">
+                  <label htmlFor="name" className="font-label-bold text-label-bold uppercase">
                     Name
                   </label>
                   <input
-                    className="h-[56px] border-[3px] border-zinc-800 px-4 focus:bg-primary-fixed focus:outline-none focus:ring-0 transition-colors bg-white"
+                    id="name"
+                    name="name"
+                    required
+                    className="h-[56px] border-[3px] border-zinc-800 px-4 focus:bg-primary-fixed focus:outline-none focus:ring-0 transition-colors bg-white disabled:bg-zinc-100 disabled:text-zinc-500"
                     placeholder="Your creative name"
                     type="text"
+                    disabled={status === "submitting" || status === "success"}
                   />
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label className="font-label-bold text-label-bold uppercase">
+                  <label htmlFor="email" className="font-label-bold text-label-bold uppercase">
                     Email
                   </label>
                   <input
-                    className="h-[56px] border-[3px] border-zinc-800 px-4 focus:bg-primary-fixed focus:outline-none focus:ring-0 transition-colors bg-white"
+                    id="email"
+                    name="email"
+                    required
+                    className="h-[56px] border-[3px] border-zinc-800 px-4 focus:bg-primary-fixed focus:outline-none focus:ring-0 transition-colors bg-white disabled:bg-zinc-100 disabled:text-zinc-500"
                     placeholder="hello@example.com"
                     type="email"
+                    disabled={status === "submitting" || status === "success"}
                   />
                 </div>
               </div>
               <div className="flex flex-col gap-2">
-                <label className="font-label-bold text-label-bold uppercase">
+                <label htmlFor="message" className="font-label-bold text-label-bold uppercase">
                   How can I help?
                 </label>
                 <textarea
-                  className="border-[3px] border-zinc-800 p-4 focus:bg-primary-fixed focus:outline-none focus:ring-0 transition-colors resize-none bg-white"
+                  id="message"
+                  name="message"
+                  required
+                  className="border-[3px] border-zinc-800 p-4 focus:bg-primary-fixed focus:outline-none focus:ring-0 transition-colors resize-none bg-white disabled:bg-zinc-100 disabled:text-zinc-500"
                   placeholder="Tell me about your project, timeline, and any specific ideas you have in mind!"
                   rows={6}
+                  disabled={status === "submitting" || status === "success"}
                 ></textarea>
               </div>
+
+              {/* Status Messages */}
+              {status === "success" && (
+                <div className="p-4 bg-green-100 border-[3px] border-zinc-800 text-green-800 font-bold flex items-center gap-2">
+                  <span className="material-symbols-outlined">check_circle</span>
+                  Inquiry sent successfully! I'll get back to you soon.
+                </div>
+              )}
+              {status === "error" && (
+                <div className="p-4 bg-red-100 border-[3px] border-zinc-800 text-red-800 font-bold flex items-center gap-2">
+                  <span className="material-symbols-outlined">error</span>
+                  Oops! Something went wrong. Please try again later.
+                </div>
+              )}
+
               <button
-                className="w-full md:w-auto px-10 py-4 bg-primary-container border-[3px] border-zinc-800 font-bold text-lg hard-shadow-md active-press transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
-                type="button"
-                onClick={playRandomPop}
-                disabled={!agreedToTos}
+                className="w-full md:w-auto px-10 py-4 bg-primary-container border-[3px] border-zinc-800 font-bold text-lg hard-shadow-md active-press transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+                type="submit"
+                disabled={!agreedToTos || status === "submitting" || status === "success"}
               >
-                Shoot over the details
-                <span className="material-symbols-outlined">send</span>
+                {status === "submitting" ? (
+                  <>
+                    Sending...
+                    <span className="material-symbols-outlined animate-spin">sync</span>
+                  </>
+                ) : status === "success" ? (
+                  <>
+                    Sent!
+                    <span className="material-symbols-outlined">check</span>
+                  </>
+                ) : (
+                  <>
+                    Shoot over the details
+                    <span className="material-symbols-outlined">send</span>
+                  </>
+                )}
               </button>
             </form>
           </div>
