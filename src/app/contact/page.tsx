@@ -178,6 +178,7 @@ export default function Contact() {
               <div className="flex justify-start">
                 <HCaptcha
                   sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"
+                  reCaptchaCompat={false}
                   onVerify={(token) => { setCaptchaToken(token); playRandomPop(); }}
                   onExpire={() => setCaptchaToken(null)}
                   ref={hcaptchaRef}
