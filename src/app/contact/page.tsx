@@ -17,7 +17,8 @@ export default function Contact() {
     e.preventDefault();
     playRandomPop();
     
-    const formData = new FormData(e.currentTarget);
+    const form = e.currentTarget;
+    const formData = new FormData(form);
     const accessKey = "46322a54-ca79-49ee-9f7b-068d71505ad7";
     
     const object = Object.fromEntries(formData);
@@ -48,7 +49,7 @@ export default function Contact() {
 
       if (data.success) {
         setStatus("success");
-        e.currentTarget.reset();
+        form.reset();
         hcaptchaRef.current?.resetCaptcha();
         setCaptchaToken(null);
       } else {
