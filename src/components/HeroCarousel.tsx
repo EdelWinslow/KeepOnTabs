@@ -5,9 +5,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { usePopSounds } from "@/hooks/usePopSounds";
 
 const SLIDES = [
-  { id: 0, src: "/KeepOnTabs/illustrations/Untitled668_20260525131326.png", alt: "Illustration" },
-  { id: 1, src: "/KeepOnTabs/illustrations/Untitled859.png", alt: "Art" },
-  { id: 2, src: "/KeepOnTabs/illustrations/Untitled786.png", alt: "Piece" },
+  { id: 0, src: "/KeepOnTabs/illustrations/Untitled668_20260525131326.jpg", alt: "Illustration" },
+  { id: 1, src: "/KeepOnTabs/illustrations/Untitled859.jpg", alt: "Art" },
+  { id: 2, src: "/KeepOnTabs/illustrations/Untitled786.jpg", alt: "Piece" },
 ];
 
 const variants = {

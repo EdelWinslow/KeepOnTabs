@@ -33,7 +33,7 @@ export default function Pricing() {
         <FadeIn delay={0.1} className="bg-white border-[3px] border-zinc-800 rounded-xl hard-shadow flex flex-col h-full overflow-hidden">
           <div className="aspect-video w-full border-b-[3px] border-zinc-800 overflow-hidden">
             <img
-              src="/KeepOnTabs/characters/Untitled848.png"
+              src="/KeepOnTabs/characters/Untitled848.jpg"
               alt="Simple Sketch Example"
               className="w-full h-full object-cover object-top"
             />
@@ -92,7 +92,7 @@ export default function Pricing() {
           </div>
           <div className="aspect-video w-full border-b-[3px] border-zinc-800 overflow-hidden">
             <img
-              src="/KeepOnTabs/illustrations/Untitled219.png"
+              src="/KeepOnTabs/illustrations/Untitled219.jpg"
               alt="Clean Lineart Example"
               className="w-full h-full object-cover object-top"
             />
@@ -148,7 +148,7 @@ export default function Pricing() {
         <FadeIn delay={0.3} className="bg-white border-[3px] border-zinc-800 rounded-xl hard-shadow flex flex-col h-full overflow-hidden">
           <div className="aspect-video w-full border-b-[3px] border-zinc-800 overflow-hidden">
             <img
-              src="/KeepOnTabs/illustrations/Untitled148.png"
+              src="/KeepOnTabs/illustrations/Untitled148.jpg"
               alt="Full Render Example"
               className="w-full h-full object-cover object-top"
             />

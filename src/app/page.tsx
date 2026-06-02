@@ -257,7 +257,7 @@ export default function Home() {
             <article className="bg-white border-4 border-zinc-800 p-4 rounded-2xl shadow-[6px_6px_0px_0px_rgba(43,47,52,1)] hover:-translate-y-2 transition-all">
               <div className="w-full aspect-square overflow-hidden rounded-lg border-2 border-zinc-800 mb-4">
                 <img
-                  src="/KeepOnTabs/illustrations/Untitled859.png"
+                  src="/KeepOnTabs/illustrations/Untitled859.jpg"
                   alt="Glow Illustration"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                 />
@@ -269,7 +269,7 @@ export default function Home() {
             <article className="bg-white border-4 border-zinc-800 p-4 rounded-2xl shadow-[6px_6px_0px_0px_rgba(43,47,52,1)] hover:-translate-y-2 transition-all">
               <div className="w-full aspect-square overflow-hidden rounded-lg border-2 border-zinc-800 mb-4">
                 <img
-                  src="/KeepOnTabs/characters/Untitled848.png"
+                  src="/KeepOnTabs/characters/Untitled848.jpg"
                   alt="Character Design"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                 />
@@ -281,7 +281,7 @@ export default function Home() {
             <article className="bg-white border-4 border-zinc-800 p-4 rounded-2xl shadow-[6px_6px_0px_0px_rgba(43,47,52,1)] hover:-translate-y-2 transition-all sm:col-span-2 md:col-span-1">
               <div className="w-full aspect-square overflow-hidden rounded-lg border-2 border-zinc-800 mb-4">
                 <img
-                  src="/KeepOnTabs/illustrations/Untitled668_20260525131326.png"
+                  src="/KeepOnTabs/illustrations/Untitled668_20260525131326.jpg"
                   alt="Epic Illustration"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                 />
