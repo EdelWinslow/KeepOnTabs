@@ -32,11 +32,11 @@ export default function Pricing() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter items-start">
         <FadeIn delay={0.1} className="bg-white border-[3px] border-zinc-800 rounded-xl hard-shadow flex flex-col h-full overflow-hidden">
           <div className="aspect-video w-full border-b-[3px] border-zinc-800 overflow-hidden">
-            <div className="w-full h-full bg-[#E5E7EB] flex items-center justify-center">
-              <span className="font-label-bold text-zinc-500 text-center px-4">
-                Simple Sketch Example
-              </span>
-            </div>
+            <img
+              src="/KeepOnTabs/characters/Untitled848.png"
+              alt="Simple Sketch Example"
+              className="w-full h-full object-cover object-top"
+            />
           </div>
           <div className="p-8 flex-grow">
             <div className="flex items-center gap-2 mb-2">
@@ -91,11 +91,11 @@ export default function Pricing() {
             POPULAR
           </div>
           <div className="aspect-video w-full border-b-[3px] border-zinc-800 overflow-hidden">
-            <div className="w-full h-full bg-[#E5E7EB] flex items-center justify-center">
-              <span className="font-label-bold text-zinc-500 text-center px-4">
-                Clean Lineart Example
-              </span>
-            </div>
+            <img
+              src="/KeepOnTabs/illustrations/Untitled219.png"
+              alt="Clean Lineart Example"
+              className="w-full h-full object-cover object-top"
+            />
           </div>
           <div className="p-8 flex-grow">
             <div className="flex items-center gap-2 mb-2">
@@ -147,11 +147,11 @@ export default function Pricing() {
 
         <FadeIn delay={0.3} className="bg-white border-[3px] border-zinc-800 rounded-xl hard-shadow flex flex-col h-full overflow-hidden">
           <div className="aspect-video w-full border-b-[3px] border-zinc-800 overflow-hidden">
-            <div className="w-full h-full bg-[#E5E7EB] flex items-center justify-center">
-              <span className="font-label-bold text-zinc-500 text-center px-4">
-                Full Render Example
-              </span>
-            </div>
+            <img
+              src="/KeepOnTabs/illustrations/Untitled148.png"
+              alt="Full Render Example"
+              className="w-full h-full object-cover object-top"
+            />
           </div>
           <div className="p-8 flex-grow">
             <div className="flex items-center gap-2 mb-2">

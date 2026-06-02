@@ -7,12 +7,11 @@ import { usePopSounds } from "@/hooks/usePopSounds";
 interface LightboxProps {
   isOpen: boolean;
   onClose: () => void;
-  title: string;
-  category: string;
-  imageText: string;
+  image?: string;
+  alt?: string;
 }
 
-export default function Lightbox({ isOpen, onClose, title, category, imageText }: LightboxProps) {
+export default function Lightbox({ isOpen, onClose, image, alt = "" }: LightboxProps) {
   const { playRandomPop } = usePopSounds();
 
   useEffect(() => {
@@ -54,7 +53,7 @@ export default function Lightbox({ isOpen, onClose, title, category, imageText }
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.85, opacity: 0, y: 30 }}
             transition={{ type: "spring", stiffness: 300, damping: 28 }}
-            className="relative bg-white border-[4px] border-zinc-800 shadow-[8px_8px_0px_0px_rgba(43,47,52,1)] max-w-4xl w-full max-h-[90vh] overflow-hidden flex flex-col"
+            className="relative bg-white border-[4px] border-zinc-800 shadow-[8px_8px_0px_0px_rgba(43,47,52,1)] max-w-4xl w-full max-h-[90vh] overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close button */}
@@ -68,32 +67,18 @@ export default function Lightbox({ isOpen, onClose, title, category, imageText }
               <span className="material-symbols-outlined text-zinc-800 font-bold">close</span>
             </button>
 
-            {/* Image area */}
-            <div className="w-full aspect-[16/10] bg-[#E5E7EB] flex items-center justify-center text-zinc-600 font-bold uppercase tracking-widest text-xl text-center px-8 border-b-[3px] border-zinc-800">
-              {imageText}
-            </div>
-
-            {/* Info bar */}
-            <div className="p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-              <div>
-                <span className="bg-secondary-container text-on-secondary-container px-3 py-1 border border-zinc-800 text-xs font-bold uppercase mb-2 inline-block">
-                  {category}
-                </span>
-                <h3 className="font-headline-md text-headline-md text-zinc-800">
-                  {title}
-                </h3>
+            {/* Image */}
+            {image ? (
+              <img
+                src={image}
+                alt={alt}
+                className="w-full h-auto max-h-[90vh] object-contain"
+              />
+            ) : (
+              <div className="w-full h-64 bg-[#E5E7EB] flex items-center justify-center text-zinc-600 font-bold uppercase tracking-widest text-xl">
+                No image
               </div>
-              <button
-                onClick={() => {
-                  playRandomPop();
-                  // Future: download or share functionality
-                }}
-                className="px-6 py-3 bg-primary-container border-[3px] border-zinc-800 font-label-bold uppercase shadow-[4px_4px_0px_0px_rgba(43,47,52,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all cursor-pointer flex items-center gap-2"
-              >
-                <span className="material-symbols-outlined text-sm">open_in_new</span>
-                View Full Size
-              </button>
-            </div>
+            )}
           </motion.div>
         </motion.div>
       )}

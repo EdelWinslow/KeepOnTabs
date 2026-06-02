@@ -8,92 +8,174 @@ import dynamic from "next/dynamic";
 
 const Lightbox = dynamic(() => import("@/components/Lightbox"), { ssr: false });
 
-const CATEGORIES = ["All Works", "Characters", "Illustrations", "Sketches"];
-
 const WORKS = [
+  // Characters (characters/)
   {
     id: 1,
-    title: "Neon Dreams Metropolis",
-    category: "Illustrations",
-    imageText: "Neon Dreams Metropolis Illustration",
-    span: "md:col-span-8",
-    height: "h-[400px]",
+    title: "Character",
+    category: "Characters",
+    image: "/KeepOnTabs/characters/Untitled119.png",
+    imageText: "Character Design",
+    span: "md:col-span-4",
+    height: "h-[320px]",
     delay: 0.2,
   },
   {
     id: 2,
-    title: "Botany Bot v2.0",
+    title: "Portrait",
     category: "Characters",
-    imageText: "Botany Bot v2.0",
+    image: "/KeepOnTabs/characters/Untitled174.png",
+    imageText: "Portrait",
     span: "md:col-span-4",
-    height: "h-[400px]",
+    height: "h-[320px]",
     delay: 0.3,
   },
   {
     id: 3,
-    title: "Creative Chaos",
-    category: "Sketches",
-    imageText: "Creative Chaos",
+    title: "Sketch Design",
+    category: "Characters",
+    image: "/KeepOnTabs/characters/Untitled206.png",
+    imageText: "Sketch Design",
     span: "md:col-span-4",
-    height: "h-[250px]",
+    height: "h-[320px]",
     delay: 0.4,
   },
   {
     id: 4,
-    title: "Expression Sheet",
+    title: "Pose Study",
     category: "Characters",
-    imageText: "Character Expression Sheet",
+    image: "/KeepOnTabs/characters/Untitled221.png",
+    imageText: "Pose Study",
     span: "md:col-span-4",
-    height: "h-[250px]",
+    height: "h-[320px]",
     delay: 0.5,
   },
   {
     id: 5,
-    title: "Azure Horizon",
-    category: "Illustrations",
-    imageText: "Azure Horizon Landscape",
+    title: "Classic",
+    category: "Characters",
+    image: "/KeepOnTabs/characters/Untitled35.png",
+    imageText: "Classic",
     span: "md:col-span-4",
-    height: "h-[250px]",
+    height: "h-[320px]",
     delay: 0.6,
   },
   {
     id: 6,
-    title: "Sci-Fi Mercenary",
+    title: "Inked",
     category: "Characters",
-    imageText: "Sci-Fi Mercenary Concept",
+    image: "/KeepOnTabs/characters/Untitled848.png",
+    imageText: "Inked",
     span: "md:col-span-4",
-    height: "h-[250px]",
+    height: "h-[320px]",
     delay: 0.7,
   },
+  // Illustrations (illustrations/)
   {
     id: 7,
-    title: "Café Doodle",
-    category: "Sketches",
-    imageText: "Quick Café Sketch",
-    span: "md:col-span-4",
-    height: "h-[250px]",
-    delay: 0.8,
+    title: "Scene I",
+    category: "Illustrations",
+    image: "/KeepOnTabs/illustrations/Untitled148.png",
+    imageText: "Scene I",
+    span: "md:col-span-8",
+    height: "h-[380px]",
+    delay: 0.2,
   },
   {
     id: 8,
-    title: "Starlight Battle",
+    title: "Magic",
     category: "Illustrations",
-    imageText: "Epic Space Battle",
+    image: "/KeepOnTabs/illustrations/Untitled156_20260205182320.png",
+    imageText: "Magic",
     span: "md:col-span-4",
-    height: "h-[250px]",
-    delay: 0.9,
+    height: "h-[380px]",
+    delay: 0.3,
+  },
+  {
+    id: 9,
+    title: "Warmth",
+    category: "Illustrations",
+    image: "/KeepOnTabs/illustrations/Untitled217.png",
+    imageText: "Warmth",
+    span: "md:col-span-4",
+    height: "h-[280px]",
+    delay: 0.4,
+  },
+  {
+    id: 10,
+    title: "Soft",
+    category: "Illustrations",
+    image: "/KeepOnTabs/illustrations/Untitled219.png",
+    imageText: "Soft",
+    span: "md:col-span-6",
+    height: "h-[280px]",
+    delay: 0.5,
+  },
+  {
+    id: 11,
+    title: "Cosmic",
+    category: "Illustrations",
+    image: "/KeepOnTabs/illustrations/Untitled222 (1).png",
+    imageText: "Cosmic",
+    span: "md:col-span-6",
+    height: "h-[280px]",
+    delay: 0.6,
+  },
+  {
+    id: 12,
+    title: "Epic",
+    category: "Illustrations",
+    image: "/KeepOnTabs/illustrations/Untitled668_20260525131326.png",
+    imageText: "Epic",
+    span: "md:col-span-8",
+    height: "h-[380px]",
+    delay: 0.7,
+  },
+  {
+    id: 13,
+    title: "Ethereal",
+    category: "Illustrations",
+    image: "/KeepOnTabs/illustrations/Untitled736.png",
+    imageText: "Ethereal",
+    span: "md:col-span-4",
+    height: "h-[380px]",
+    delay: 0.2,
+  },
+  {
+    id: 14,
+    title: "Grand",
+    category: "Illustrations",
+    image: "/KeepOnTabs/illustrations/Untitled786.png",
+    imageText: "Grand",
+    span: "md:col-span-4",
+    height: "h-[280px]",
+    delay: 0.3,
+  },
+  {
+    id: 15,
+    title: "Glow",
+    category: "Illustrations",
+    image: "/KeepOnTabs/illustrations/Untitled859.png",
+    imageText: "Glow",
+    span: "md:col-span-4",
+    height: "h-[280px]",
+    delay: 0.4,
+  },
+  {
+    id: 16,
+    title: "Classic Illus",
+    category: "Illustrations",
+    image: "/KeepOnTabs/illustrations/Untitled93.png",
+    imageText: "Classic Illus",
+    span: "md:col-span-4",
+    height: "h-[280px]",
+    delay: 0.5,
   },
 ];
 
 export default function Gallery() {
-  const [activeCategory, setActiveCategory] = useState("All Works");
   const { playRandomPop } = usePopSounds();
   const [selectedWork, setSelectedWork] = useState<typeof WORKS[0] | null>(null);
-
-  const filteredWorks =
-    activeCategory === "All Works"
-      ? WORKS
-      : WORKS.filter((work) => work.category === activeCategory);
 
   return (
     <div className="max-w-container-max mx-auto px-8 py-16 w-full flex-grow">
@@ -109,90 +191,65 @@ export default function Gallery() {
         </header>
       </FadeIn>
 
-      <FadeIn delay={0.1}>
-        <div className="flex flex-wrap gap-4 mb-12">
-          {CATEGORIES.map((category) => (
-            <button
-              key={category}
-              onClick={() => {
-                playRandomPop();
-                setActiveCategory(category);
-              }}
-              className={`${
-                activeCategory === category
-                  ? "bg-primary-container text-on-primary-container"
-                  : "bg-secondary-container text-on-secondary-container"
-              } font-label-bold text-label-bold px-6 py-3 rounded-full border-2 border-zinc-800 ${
-                activeCategory === category ? "hard-shadow" : "hard-shadow-hover"
-              } active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all cursor-pointer`}
-            >
-              {category}
-            </button>
-          ))}
-        </div>
-      </FadeIn>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-gutter">
-        {filteredWorks.map((work, index) => (
+      <div className="columns-1 sm:columns-2 lg:columns-3 gap-6">
+        {WORKS.map((work, index) => (
           <FadeIn
             key={work.id}
             delay={work.delay}
-            className={`${work.span} ${index >= 4 ? "hidden md:flex" : "flex"} bg-white border-[3px] border-zinc-800 p-4 hard-shadow group flex-col cursor-pointer`}
+            className="break-inside-avoid flex bg-white border-[3px] border-zinc-800 p-4 hard-shadow group flex-col cursor-pointer mb-6"
           >
             <article
-              className={`overflow-hidden border-2 border-zinc-800 mb-4 ${work.height}`}
+              className="overflow-hidden border-2 border-zinc-800"
               onClick={() => {
                 playRandomPop();
                 setSelectedWork(work);
               }}
               aria-label={`View detail for ${work.title}`}
             >
-              <div className="w-full h-full bg-[#E5E7EB] flex items-center justify-center text-zinc-600 font-bold uppercase tracking-widest text-center px-4 transition-transform duration-500 group-hover:scale-105">
-                {work.imageText}
-              </div>
+              {work.image ? (
+                <img
+                  src={work.image}
+                  alt={work.title}
+                  className="w-full h-auto transition-transform duration-500 group-hover:scale-105"
+                />
+              ) : (
+                <div className="w-full h-48 bg-[#E5E7EB] flex items-center justify-center text-zinc-600 font-bold uppercase tracking-widest text-center px-4 transition-transform duration-500 group-hover:scale-105">
+                  {work.imageText}
+                </div>
+              )}
             </article>
-            <div className="flex justify-between items-end mt-auto">
-              <div>
-                <span className="bg-secondary-container text-on-secondary-container px-3 py-1 border border-zinc-800 text-xs font-bold uppercase mb-2 inline-block">
-                  {work.category}
-                </span>
-                <h3 className="font-headline-md text-headline-md">
-                  {work.title}
-                </h3>
-              </div>
-            </div>
           </FadeIn>
         ))}
-
-        <FadeIn
-          delay={0.5}
-          className="md:col-span-12 bg-primary-container border-[4px] border-zinc-800 p-12 hard-shadow flex flex-col md:flex-row items-center justify-between gap-8 mt-8"
-        >
-          <div className="max-w-xl">
-            <h2 className="font-headline-xl text-headline-xl text-on-primary-container mb-4">
-              Want something custom?
-            </h2>
-            <p className="font-body-lg text-body-lg text-on-primary-container opacity-90">
-              I&apos;m currently open for commissions! Whether it&apos;s a character for
-              your RPG or a full-scale illustration for your brand, let&apos;s make
-              something amazing together.
-            </p>
-          </div>
-          <Link href="/contact" onClick={playRandomPop}>
-            <button className="bg-white text-zinc-800 font-headline-md text-headline-md px-10 py-5 border-[3px] border-zinc-800 hard-shadow hover:translate-x-[2px] hover:translate-y-[2px] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all whitespace-nowrap cursor-pointer">
-              Start a Project
-            </button>
-          </Link>
-        </FadeIn>
       </div>
+
+      {/* Callout Card */}
+      <FadeIn
+        delay={0.5}
+        className="w-full bg-primary-container border-[4px] border-zinc-800 p-12 hard-shadow flex flex-col md:flex-row items-center justify-between gap-8 mt-8"
+      >
+        <div className="max-w-xl">
+          <h2 className="font-headline-xl text-headline-xl text-on-primary-container mb-4">
+            Want something custom?
+          </h2>
+          <p className="font-body-lg text-body-lg text-on-primary-container opacity-90">
+            I&apos;m currently open for commissions! Whether it&apos;s a character for
+            your RPG or a full-scale illustration for your brand, let&apos;s make
+            something amazing together.
+          </p>
+        </div>
+        <Link href="/contact" onClick={playRandomPop}>
+          <button className="bg-white text-zinc-800 font-headline-md text-headline-md px-10 py-5 border-[3px] border-zinc-800 hard-shadow hover:translate-x-[2px] hover:translate-y-[2px] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all whitespace-nowrap cursor-pointer">
+            Start a Project
+          </button>
+        </Link>
+      </FadeIn>
 
       {/* Lightbox */}
       <Lightbox
         isOpen={!!selectedWork}
         onClose={() => setSelectedWork(null)}
-        title={selectedWork?.title ?? ""}
-        category={selectedWork?.category ?? ""}
-        imageText={selectedWork?.imageText ?? ""}
+        image={selectedWork?.image}
+        alt={selectedWork?.title}
       />
     </div>
   );

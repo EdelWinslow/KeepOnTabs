@@ -255,36 +255,39 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             <article className="bg-white border-4 border-zinc-800 p-4 rounded-2xl shadow-[6px_6px_0px_0px_rgba(43,47,52,1)] hover:-translate-y-2 transition-all">
-              <div className="w-full aspect-square object-cover rounded-lg border-2 border-zinc-800 mb-4 bg-[#E5E7EB] flex items-center justify-center text-zinc-500 font-bold" aria-label="Placeholder for Gallery Item 1">
-                Gallery Item 1
+              <div className="w-full aspect-square overflow-hidden rounded-lg border-2 border-zinc-800 mb-4">
+                <img
+                  src="/KeepOnTabs/illustrations/Untitled859.png"
+                  alt="Glow Illustration"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                />
               </div>
               <div className="flex justify-between items-center px-2">
-                <span className="font-label-bold uppercase text-zinc-800">Character Design</span>
-                <span className="bg-secondary-container px-3 py-1 rounded-full border-2 border-zinc-800 text-xs font-bold">
-                  $45+
-                </span>
+                <span className="font-label-bold uppercase text-zinc-800">Illustration</span>
               </div>
             </article>
             <article className="bg-white border-4 border-zinc-800 p-4 rounded-2xl shadow-[6px_6px_0px_0px_rgba(43,47,52,1)] hover:-translate-y-2 transition-all">
-              <div className="w-full aspect-square object-cover rounded-lg border-2 border-zinc-800 mb-4 bg-[#E5E7EB] flex items-center justify-center text-zinc-500 font-bold" aria-label="Placeholder for Gallery Item 2">
-                Gallery Item 2
+              <div className="w-full aspect-square overflow-hidden rounded-lg border-2 border-zinc-800 mb-4">
+                <img
+                  src="/KeepOnTabs/characters/Untitled848.png"
+                  alt="Character Design"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                />
               </div>
               <div className="flex justify-between items-center px-2">
-                <span className="font-label-bold uppercase text-zinc-800">Couple Portrait</span>
-                <span className="bg-secondary-container px-3 py-1 rounded-full border-2 border-zinc-800 text-xs font-bold">
-                  $70+
-                </span>
+                <span className="font-label-bold uppercase text-zinc-800">Character Design</span>
               </div>
             </article>
             <article className="bg-white border-4 border-zinc-800 p-4 rounded-2xl shadow-[6px_6px_0px_0px_rgba(43,47,52,1)] hover:-translate-y-2 transition-all sm:col-span-2 md:col-span-1">
-              <div className="w-full aspect-square object-cover rounded-lg border-2 border-zinc-800 mb-4 bg-[#E5E7EB] flex items-center justify-center text-zinc-500 font-bold" aria-label="Placeholder for Gallery Item 3">
-                Gallery Item 3
+              <div className="w-full aspect-square overflow-hidden rounded-lg border-2 border-zinc-800 mb-4">
+                <img
+                  src="/KeepOnTabs/illustrations/Untitled668_20260525131326.png"
+                  alt="Epic Illustration"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                />
               </div>
               <div className="flex justify-between items-center px-2">
-                <span className="font-label-bold uppercase text-zinc-800">Streetwear OC</span>
-                <span className="bg-secondary-container px-3 py-1 rounded-full border-2 border-zinc-800 text-xs font-bold">
-                  $55+
-                </span>
+                <span className="font-label-bold uppercase text-zinc-800">Full Render</span>
               </div>
             </article>
           </div>

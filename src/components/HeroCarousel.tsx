@@ -5,9 +5,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { usePopSounds } from "@/hooks/usePopSounds";
 
 const SLIDES = [
-  { id: 0, content: "Recent Commission 1", bg: "bg-[#E5E7EB]" },
-  { id: 1, content: "Recent Commission 2", bg: "bg-[#D1D5DB]" },
-  { id: 2, content: "Recent Commission 3", bg: "bg-[#9CA3AF]" },
+  { id: 0, src: "/KeepOnTabs/illustrations/Untitled668_20260525131326.png", alt: "Illustration" },
+  { id: 1, src: "/KeepOnTabs/illustrations/Untitled859.png", alt: "Art" },
+  { id: 2, src: "/KeepOnTabs/illustrations/Untitled786.png", alt: "Piece" },
 ];
 
 const variants = {
@@ -57,9 +57,13 @@ export default function HeroCarousel() {
             x: { type: "spring", stiffness: 300, damping: 30 },
             opacity: { duration: 0.2 }
           }}
-          className={`absolute inset-0 flex items-center justify-center text-zinc-700 font-bold font-headline-md ${SLIDES[currentIndex].bg}`}
+          className={`absolute inset-0 flex items-center justify-center bg-zinc-100`}
         >
-          <span className="p-4 text-center uppercase tracking-widest">{SLIDES[currentIndex].content}</span>
+          <img
+            src={SLIDES[currentIndex].src}
+            alt={SLIDES[currentIndex].alt}
+            className="w-full h-full object-cover"
+          />
         </motion.div>
       </AnimatePresence>
 
